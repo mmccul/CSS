@@ -49,7 +49,7 @@
 
         color: var(--fg2);
     }
-
+    }
     body {
         font-size: var(--fontsize);
     }
@@ -191,13 +191,13 @@
     input,
     select,
     textarea {
-        font: font-size: var(--fontsize);
+        font-size: var(--fontsize);
         font-family: var(--fontfamily);
     }
     a.static-left-menu-link:link,
     a.static-left-menu-link:active,
     a.static-left-menu-link:visited {
-        font: font-size: var(--fontsize);
+        font-size: var(--fontsize);
         font-family: var(--fontfamily);
     }
     .leftFieldInside > div {
