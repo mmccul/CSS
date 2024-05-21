@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           confluence.slac.stanford.edu - 9/19/2023, 8:36:28 AM
 @namespace      confluence_dark
-@version        1.0.0
-@description    A new userstyle
+@version        20240521
+@description    Darken Confluence, smoother than most efforts I've seen.
 @author         The_Hat
 @preprocessor   stylus
 @var    color   primarybg "Primary Background" "#373737"
@@ -24,10 +24,14 @@
 @var    color   bg-highlight    "Background highlight color" "#20206f"
 @var    color   bg-tip      "Tip box background" "#014001"
 @var    color   bg-info     "Info box background" "#010140"
+@var    color   bg-note     "Note box background" "#404000"
+@var    color   bg-warning  "Warning box background" "#300000"
 }
 ==/UserStyle== */
 
-/* IMPORTANT  For this page to work, you MUST edit the below domain entry to that for your confluence space. */
+/* IMPORTANT  
+For this page to work, you MUST edit the below domain entry to that for your confluence space. 
+   IMPORTANT*/
 @-moz-document domain("confluence.example.com") {
     if primarybg {
         :root {
@@ -41,6 +45,7 @@
             --fontsize: fontsize;
             --fg1: fg1;
             --fg2: fg2;
+            --fg3: #c8c8c8;
             --bg-button: bg-button;
             --bg-green: bg-green;
             --fontfamily: fontfamily;
@@ -49,7 +54,8 @@
             --bg-info: bg-info;
             --aui-label-bg-color: #202060;
             --aui-btn-text: var(--fg2);
-
+            --bg-note: bg-note;
+            --bg-warning: bg-warning;
         }
     }
     :root {
@@ -69,11 +75,11 @@
     --aui-focus: #4c9aff;
     --aui-link-color: var(--fg-link);
     --aui-link-decoration: none;
-    --aui-link-hover-color: #0065ff;
-    --aui-link-active-color: #0747a6;
+    --aui-link-hover-color: var(--fg-link);
+    --aui-link-active-color: var(--fg-link);
     --aui-link-hover-decoration: underline;
-    --aui-link-visited-color: #403294;
-    --aui-itemheading-text: #5e6c84;
+    --aui-link-visited-color: var(--fg-link);
+    --aui-itemheading-text: var(--fg2);
     --aui-item-bg: transparent;
     --aui-item-text: var(--fg2);
     --aui-item-focus-bg: rgba(9,30,66,0.08);
@@ -86,11 +92,11 @@
     --aui-item-disabled-text: var(--fg2);
     --aui-tooltip-bg-color: rgba(52,69,99,0.9);
     --aui-tooltip-border-color: rgba(52,69,99,0.9);
-    --aui-tooltip-content-text-color: #dfe1e6;
-    --aui-tooltip-title-text-color: #fff;
-    --aui-help-color: #5243aa;
+    --aui-tooltip-content-text-color: var(--fg2);
+    --aui-tooltip-title-text-color: var(--fg1);
+    --aui-help-color: var(--fg2);
     --aui-badge-bg-color: rgba(9,30,66,0.13);
-    --aui-badge-text-color: #172b4d;
+    --aui-badge-text-color: var(--fg3);
     --aui-badge-primary-bg-color: #0052cc;
     --aui-badge-primary-text-color: #fff;
     --aui-badge-added-bg-color: #e3fcef;
@@ -145,10 +151,9 @@
     --aui-flag-bg-color: var(--aui-dropdown-bg-color);
     --aui-flag-info-color: #0052cc;
     --aui-flag-success-color: #36b37e;
-    --aui-flag-warning-color: #ffab00;
+    --aui-flag-warning-color: #ffcb00;
     --aui-flag-error-color: #ff5630;
     --aui-button-default-bg-color: rgba(9,30,66,0.08);
-    --aui-button-default-text-color: #344563;
     --aui-button-default-hover-bg-color: rgba(9,30,66,0.13);
     --aui-button-default-active-bg-color: #deebff;
     --aui-button-default-active-text-color: #0052cc;
@@ -157,7 +162,7 @@
     --aui-button-default-disabled-bg-color: rgba(9,30,66,0.04);
     --aui-button-default-disabled-text-color: #a5adba;
     --aui-button-primary-bg-color: #0052cc;
-    --aui-button-primary-text-color: #fff;
+    --aui-button-primary-text-color: var(--fg1);
     --aui-button-primary-hover-bg-color: #0065ff;
     --aui-button-primary-active-bg-color: #0052cc;
     --aui-button-primary-active-text-color: #fff;
@@ -167,7 +172,7 @@
     --aui-button-subtle-text-color: var(--fg2);
     --aui-label-text-color: inherit;
     --aui-label-link-color: inherit;
-    --aui-label-bg-color: #f4f5f7;
+    --aui-label-bg-color: inherit;
     --aui-label-hover-bg-color: #f4f5f7;
     --aui-label-close-hover-bg-color: #ffbdad;
     --aui-label-close-hover-text-color: #172b4d;
@@ -175,7 +180,6 @@
     --aui-form-placeholder-disabled-text-color: #a5adba;
     --aui-form-label-text-color: #6b778c;
     --aui-form-error-text-color: #de350b;
-    --aui-form-description-text-color: #6b778c;
     --aui-form-disabled-field-bg-color: #f4f5f7;
     --aui-form-disabled-field-text-color: #97a0af;
     --aui-form-disabled-field-label-color: #97a0af;
@@ -380,6 +384,18 @@
    [data-macro-name='info'] p {
        color: var(--fg1);
    }
+   [data-macro-name='note'] {
+       background-color: var(--bg-note);
+   }
+   [data-macro-name='note'] p {
+       color: var(--fg1);
+   }
+   [data-macro-name='warning'] {
+       background-color: var(--bg-warning);
+   }
+   [data-macro-name='warning'] p {
+       color: var(--fg1);
+   }
    .wiki-content table.tablesorter>thead>tr>th, table.aui.tablesorter.content-report-table-macro>thead>tr>th {
        background-color: var(--bg2);
    }
@@ -414,4 +430,8 @@
        background-color: var(--bg-highlight);
        color: var(--fg2);
    }
+   .label-list, .label-list .labels-edit-container .aui-iconfont-devtools-tag-small {
+       color: var(--fg2);
+   }
+   
 }
