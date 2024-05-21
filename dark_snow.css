@@ -1,0 +1,721 @@
+    /* ==UserStyle==
+@name           Dark SNOW Parameterized
+@namespace      dark_snow_param
+@version        1.3.5
+@description    A darker SNOW, with parameters for customization
+@author         The_Hat
+@preprocessor   stylus
+@var    color   primarybg "Primary Background" "#373737"
+@var    color   secondarybg "Secondary Background" "#222222"
+@var    color   tertiarybg "Tertiary Background" "#2a3a40"
+@var    color   bg-tableeven    "Table Background even row" "#373737"
+@var    color   bg-tableodd     "Table Background odd row"  "#303030"
+@var    color   fg-link "Link color"    "#a0a0ff"
+@var    color   bg-highlight "Background Highlight" "#3a4a55"
+@var    text  fontsize    "Font size"   12pt
+@var    select  fontfamily  "Font Family" {
+    "Serif": "serif",
+    "Sans-serif": "sans-serif"
+}
+@var    color   fg1 "Main font color"   "#dadada"
+@var    color   fg2 "Muted font color"  "#b0b0b0"
+@var    color   bg-button   "Button Background" "#e0e0e0"
+@var    color   bg-green    "Green Buttons" "#004000"
+@var    color   fg-dark     "Dark (contrast) font color" "#2c2c2c"
+}
+==/UserStyle== */
+    @-moz-document domain("servicenowservices.com"),
+    regexp("^\\/email_display.do") {
+        /* No longer set directly here, use the Stylus configuration options to configure your color choices */
+        if primarybg {
+            :root {
+                --bg1: primarybg;
+                --bg2: secondarybg;
+                --bg3: tertiarybg;
+                --bg-highlight: bg-highlight;
+                --fg-link: fg-link;
+                --bg-tableeven: bg-tableeven;
+                --bg-tableodd: bg-tableodd;
+                --fontsize: fontsize;
+                --fg: fg1;
+                --fg1: fg1;
+                --fg2: fg2;
+                --bg-button: bg-button;
+                --bg-green: bg-green;
+                --fontfamily: fontfamily;
+                --fg-dark: fg-dark;
+                --now-color--neutral-18: fg2;
+                --now-color_background--secondary: var(--bg2);
+                --now-color_text--primary: var(--fg1);
+                --now-color--primary-2: var(--fg2);
+                --now-color_background--primary: var(--bg1);
+                --now-text-link--primary--color: var(--fg-link);
+                --now-color--link-2: var(--fg-link);
+                /* These are to deal with shadow root where I cannot directly set styles */
+                --now-modal--background-color: 32, 32, 32;
+                --now-modal_heading--color: 218, 218, 218;
+            }
+        }
+        body {
+            --now-global-font-size--xs: 12pt;
+            --now-global-font-size--md: 12pt;
+            --now-global-font-size--sm: 12pt;
+            --now-global-font-size--lg: 16pt;
+            --now-global-font-size--xl: 20pt;
+            --now-global-font-size--xxl: 24pt;
+            --now-global-font-size--3xl: 28pt;
+            --now-color_text--primary: 218, 218, 218;
+            --now-button--secondary--color: 50, 50, 50;
+        }
+
+        body {
+            background-color: var(--bg1);
+            color: var(--fg1) !important;
+            font-size: var(--fontsize);
+            font-family: var(--fontfamily);
+        }
+        .navbar-default {
+            background-color: inherit;
+            color: var(--fg1);
+        }
+        HTML[data-doctype=true] H1.form_header {
+            color: var(--fg1);
+        }
+        HTML[data-doctype=true] BODY {
+            color: var(--fg1);
+            background-color: var(--bg1);
+        }
+        .has-success .control-label,
+        .has-warning .control-label,
+        .has-error .control-label,
+        .is-required .control-label,
+        .is-filled .control-label {
+            color: var(--fg1);
+        }
+        .list_odd,
+        tr.list_odd .list_decoration_cell,
+        tr.list_odd td {
+            background-color: var(--bg-tableodd)!important;
+        }
+        .list_even,
+        tr.list_even .list_decoration_cell,
+        tr.list_even td {
+            background-color: var(--bg-tableeven)!important;
+        }
+        HTML[data-doctype=true] tr.list_even td,
+        HTML[data-doctype=true] tr.list_odd td,
+        HTML[data-doctype=true] .drag_section_header,
+        HTML[data-doctype=true] SELECT:not([readonly="readonly"]) {
+            color: var(--fg1);
+        }
+        .table td a,
+        .table th a {
+            color: var(--fg-link);
+        }
+        HTML[data-doctype=true] .list_nav.list_nav_top {
+            background: var(--bg1);
+        }
+        .breadcrumb_container {
+            background: var(--bg1);
+        }
+        table,
+        tr.list_header,
+        tr.list_header_search_row {
+            background-color: var(--bg1) !important;
+        }
+        HTML[data-doctype=true] TR.list_header th,
+        HTML[data-doctype=true] TR.list_header.hierarchical th.hierarchical,
+        HTML[data-doctype=true] TR.list_header td {
+            background: var(--bg2);
+        }
+        .sn-card-component_summary .sn-widget-textblock,
+        .sn-card-component_records .sn-widget-list-table-cell:last-of-type {
+            font: var(--fontsize) monospace;
+        }
+        .form-control,
+        .form-control[disabled],
+        .form-control[readonly],
+        fieldset[disabled] .form-control,
+        .h-card {
+            background: var(--bg2);
+            color: var(--fg1);
+            font-size: var(--fontsize);
+        }
+        .sn-card-component_summary .sn-widget-textblock,
+        .sn-card-component_records .sn-widget-list-table-cell:last-of-type {
+            color: var(--fg1);
+        }
+        .sn-widget-list li,
+        .sn-card-component {
+            color: var(--fg2);
+        }
+        a:hover,
+        a:focus,
+        a {
+            color: var(--fg-link);
+        }
+        HTML[data-doctype=true] ul.tagit {
+            background-color: var(--bg2);
+            color: var(--fg1);
+        }
+        .list_nav {
+            background-color: var(--bg1);
+        }
+        HTML[data-doctype=true] .context_menu {
+            background: var(--bg1);
+            color: var(--fg1);
+        }
+        .context_item {
+            color: var(--fg1);
+        }
+        .default-focus-outline:focus {
+            outline: 5px auto var(--bg-highlight);
+        }
+        .context_item.context_menu_hover,
+        .context_item:focus {
+            background-color: var(--bg-highlight);
+        }
+        .vcr_controls input {
+            color: var(--fg1) !important;
+        }
+        .compact .form-control {
+            font-size: var(--fontsize);
+        }
+        html[stylus-iframe*="servicenowservices.com"] body {
+            color: var(--fg1) !important;
+        }
+        HTML[data-doctype=true] INPUT.ref_invalid {
+            background-color: var(--bg2);
+        }
+        button.form_action_button {
+            font-weight: bold;
+        }
+
+        #AC\.incident\.assignment_group_shim {
+            background-color: var(--bg1)
+        }
+
+
+        .fieldmessage-container,
+        .input-group,
+        #sys_display.incident.assignment_group,
+        incident.assignment_group,
+        #AC\.incident\.assignment_group,
+        [class='ac_dropdown'] .input-group input {
+            background-color: var(--bg2) !important;
+        }
+
+        .form-control[disabled],
+        .form-control[readonly],
+        fieldset[disabled] .form-control,
+        .ui-draggable-iframeFix,
+        .input-group.ref-container {
+            background-color: var(--bg2);
+        }
+        .popover {
+            background-color: var(--bg2);
+        }
+        .popover-title,
+        .popover-header h1,
+        .popover-header.popover-header-bar .popover-title {
+            background-color: inherit;
+            color: var(--fg1);
+            font-weight: bold;
+        }
+        .btn-default,
+        .btn-destructive-subdued,
+        .btn-success-subdued,
+        .nav-segmented > li {
+            background-color: var(--bg-button);
+            font-weight: bold;
+        }
+        .filterToolbar {
+            background-color: var(--bg1);
+        }
+        .select2-container .select2-choice {
+            background-color: var(--bg2);
+            color: var(--fg1);
+        }
+        HTML[data-doctype=true] .select2-container,
+        HTML[data-doctype=true] .select2-choice,
+        HTML[data-doctype=true] .select2-drop,
+        TR.sn-filter-section-message > TD h3 {
+            color: var(--fg1);
+        }
+        .select2-drop,
+        .select-drop {
+            background: var(--bg1);
+        }
+        input {
+            background-color: var(--bg2);
+            color: var(--fg1);
+        }
+        HTML[data-doctype=true] .list_message_row,
+        .tabs2_list.list_v2 {
+            background: var(--bg1);
+        }
+        #AC\.incident\.assignment_group.ac_dropdown {
+            background-color: var(--bg1) !important;
+        }
+        .panel {
+            background-color: inherit;
+        }
+        .modal-content {
+            background-color: var(--bg2);
+        }
+        .well {
+            background-color: var(--bg2);
+        }
+        .breadcrumbs-container {
+            background-color: var(--bg1);
+            color: var(--fg1);
+        }
+        .a-disabled.ng-binding.ng-scope,
+        .text-muted {
+            color: var(--fg2);
+        }
+        HTML[data-doctype=true] BODY.non_standard_lists {
+            background: var(--bg1);
+            color: var(--fg1);
+        }
+        .select2-drop {
+            color: var(--fg1);
+        }
+        html[data-doctype=true] .popover-item-list .popover-body button,
+        html[data-doctype=true] .popover-item-list .popover-body a {
+            color: var(--fg-link);
+        }
+        HTML[data-doctype=true] BUTTON:not(.btn),
+        HTML[data-doctype=true] INPUT.button {
+            background: var(--bg2);
+        }
+        HTML[data-doctype=true] div.ac_dropdown .ac_header {
+            background: var(--bg2);
+        }
+        HTML[data-doctype=true] div.ac_dropdown .ac_highlight {
+            background: var(--bg-highlight);
+        }
+        HTML[data-doctype=true] #templateOverflowContainer .popover-body .template_overflow_items li a {
+            color: var(--fg1);
+        }
+        h3.popover-title {
+            color: var(--fg1) !important;
+        }
+        HTML[data-doctype=true] BUTTON:not(.btn),
+        HTML[data-doctype=true] INPUT.button {
+            color: var(--fg1);
+        }
+        LI.attachment_list_items A.content_editable {
+            color: var(--fg1);
+        }
+        A.attachment {
+            color: var(--fg2);
+        }
+        HTML[data-doctype=true] .popover-item-list #document_tags li .icon-user,
+        HTML[data-doctype=true] .popover-item-list #document_tags li .icon-user-group,
+        HTML[data-doctype=true] .popover-item-list #document_tags li a {
+            color: var(--fg2) !important;
+        }
+        html[data-doctype=true] .popover-item-list .popover-body button:disabled,
+        html[data-doctype=true] .popover-item-list .popover-body a:disabled {
+            color: var(--fg2) !important;
+        }
+        .select2-search input {
+            background-color: var(--bg2);
+        }
+        .select2-results .select2-no-results,
+        .select2-results .select2-searching,
+        .select2-results .select2-selection-limit {
+            background-color: var(--bg2);
+        }
+        .status-table th {
+            background-color: var(--bg2) !important;
+        }
+        .table-striped > tbody > tr:nth-of-type(odd) {
+            background-color: var(--bg-tableodd);
+        }
+        .table-striped > tbody > tr:nth-of-type(even) {
+            background-color: var(--bg-tableeven);
+        }
+        .alert-success1 {
+            background-color: var(--bg-green) !important;
+        }
+        .a-disabled {
+            color: var(--fg2) !important;
+        }
+        .sidebar label:not(.col-md-6):not(.checkbox-label),
+        .sidebar .settings-label {
+            color: var(--fg1);
+        }
+        .rd .panel:hover {
+            background: inherit;
+        }
+        .sidebar > .tab-content > .panel .pane-body #report-name:focus {
+            color: var(--fg1);
+        }
+        .shaded-section {
+            background-color: var(--bg2);
+        }
+        .btn-primary.disabled,
+        .btn-primary.disabled:hover,
+        .btn-primary.disabled:focus,
+        .btn-primary.disabled:active,
+        .btn-primary.disabled.active,
+        .btn-primary[disabled],
+        .btn-primary[disabled]:hover,
+        .btn-primary[disabled]:focus,
+        .btn-primary[disabled]:active,
+        .btn-primary[disabled].active,
+        fieldset[disabled] .btn-primary,
+        fieldset[disabled] .btn-primary:hover,
+        fieldset[disabled] .btn-primary:focus,
+        fieldset[disabled] .btn-primary:active,
+        fieldset[disabled] .btn-primary.active {
+            color: var(--fg1);
+            background-color: var(--bg1);
+        }
+        #main-nav {
+            background: var(--bg2);
+        }
+        #main-nav .nav-segmented li.active span {
+            color: var(--fg1);
+        }
+        .btn-default.disabled,
+        .disabled.btn-destructive-subdued,
+        .disabled.btn-success-subdued,
+        .nav-segmented > li.disabled,
+        .btn-default.disabled:hover,
+        .disabled.btn-destructive-subdued:hover,
+        .disabled.btn-success-subdued:hover,
+        .nav-segmented > li.disabled:hover,
+        .btn-default.disabled:focus,
+        .disabled.btn-destructive-subdued:focus,
+        .disabled.btn-success-subdued:focus,
+        .nav-segmented > li.disabled:focus,
+        .btn-default.disabled:active,
+        .disabled.btn-destructive-subdued:active,
+        .disabled.btn-success-subdued:active,
+        .nav-segmented > li.disabled:active,
+        .btn-default.disabled.active,
+        .disabled.active.btn-destructive-subdued,
+        .disabled.active.btn-success-subdued,
+        .nav-segmented > li.disabled.active,
+        .btn-default[disabled],
+        [disabled].btn-destructive-subdued,
+        [disabled].btn-success-subdued,
+        .nav-segmented > li[disabled],
+        .btn-default[disabled]:hover,
+        [disabled].btn-destructive-subdued:hover,
+        [disabled].btn-success-subdued:hover,
+        .nav-segmented > li[disabled]:hover,
+        .btn-default[disabled]:focus,
+        [disabled].btn-destructive-subdued:focus,
+        [disabled].btn-success-subdued:focus,
+        .nav-segmented > li[disabled]:focus,
+        .btn-default[disabled]:active,
+        [disabled].btn-destructive-subdued:active,
+        [disabled].btn-success-subdued:active,
+        .nav-segmented > li[disabled]:active,
+        .btn-default[disabled].active,
+        [disabled].active.btn-destructive-subdued,
+        [disabled].active.btn-success-subdued,
+        .nav-segmented > li[disabled].active,
+        fieldset[disabled] .btn-default,
+        fieldset[disabled] .btn-destructive-subdued,
+        fieldset[disabled] .btn-success-subdued,
+        fieldset[disabled] .nav-segmented > li,
+        fieldset[disabled] .btn-default:hover,
+        fieldset[disabled] .btn-destructive-subdued:hover,
+        fieldset[disabled] .btn-success-subdued:hover,
+        fieldset[disabled] .nav-segmented > li:hover,
+        fieldset[disabled] .btn-default:focus,
+        fieldset[disabled] .btn-destructive-subdued:focus,
+        fieldset[disabled] .btn-success-subdued:focus,
+        fieldset[disabled] .nav-segmented > li:focus,
+        fieldset[disabled] .btn-default:active,
+        fieldset[disabled] .btn-destructive-subdued:active,
+        fieldset[disabled] .btn-success-subdued:active,
+        fieldset[disabled] .nav-segmented > li:active,
+        fieldset[disabled] .btn-default.active,
+        fieldset[disabled] .active.btn-destructive-subdued,
+        fieldset[disabled] .active.btn-success-subdued,
+        fieldset[disabled] .nav-segmented > li.active {
+            color: var(--fg2);
+        }
+        .live_feed.selfie-lite {
+            background-color: var(--bg1) !important;
+        }
+        HTML[data-doctype=true] SPAN.list_row_number_input {
+            color: var(--fg1);
+        }
+        .homepage_category_only a,
+        .homepage_category_only a,
+        .homepage_category_only a:hover {
+            color: var(--fg1) !important;
+        }
+        .info-row {
+            color: var(--fg1);
+        }
+        .row.homepage .hpMainNav .hpSidePanel .categories ul li a {
+            color: var(--fg2);
+        }
+        .kb_view_breadcrumb li a {
+            color: var(--fg2);
+        }
+        .result-list li {
+            color: var(--fg2);
+        }
+        .result-list p.record-description {
+            color: var(--fg1);
+        }
+        .result-list-tooltip .icon-info {
+            color: var(--fg2);
+        }
+        #body_com\.glideapp\.servicecatalog\.RenderCategory_01688146052940011 > div > a > table > tbody > tr > td.homepage_category_only_description_cell > span,
+        td.homepage_category_only_description_cell > span {
+            color: var(--fg2) !important;
+        }
+        HTML[data-doctype=true] a.service_catalog {
+            color: var(--fg1);
+        }
+        a[href^='sys_user.do'] {
+            color: var(--fg-link) !important;
+        }
+        .list-group-item {
+            background-color: var(--bg2);
+        }
+        .group-item-default:hover {
+            color: var(--fg-dark);
+        }
+        .panel-footer {
+            background-color: var(--bg2);
+        }
+        tr td span {
+            color: var(--fg) !important;
+        }
+        .input-group input[name="q"] {
+            color: var(--fg);
+        }
+        .category-widget .category-list ul.list-bg-default[role="list"] {
+            background-color: var(--bg-highlight);
+        }
+        .grid-stack-container {
+            background-color: var(--bg1) !important;
+        }
+        .grid-stack-item-content {
+            background-color: var(--bg2);
+        }
+        .single-score > span > a {
+            color: var(--fg2) !important;
+        }
+        .grid-stack-item-content,
+        .chart-container,
+        .highcharts-container,
+        .highcharts-root,
+        .highcharts-root rect {
+            background-color: var(--bg2);
+            fill: var(--bg2);
+        }
+        .highcharts-legend-box {
+            filter: invert(180);
+        }
+        HTML[data-doctype=true] td.list_group {
+            background-color: var(--bg2);
+        }
+        .grid-widget-header {
+            background-color: var(--bg2);
+        }
+        .header-tools {
+            background-color: inherit;
+            color: inherit;
+        }
+        .sn-canvas-header-tools {
+            background-color: inherit;
+            color: inherit;
+        }
+        .picker-popup .picker-popup-content {
+            background-color: var(--bg2);
+            color: var(--fg1);
+        }
+        div.dshb-slct-list button.dshb-slct-list-btn div.selectorTitle {
+            color: var(--fg2);
+        }
+        div.dshb-slct-list button.dshb-slct-list-btn div.selectorSubtitle,
+        div.dshb-slct-list button.dshb-slct-list-btn div.subtitle {
+            color: var(--fg2);
+        }
+        .dashboard-overview-card .dashboard-overview-card-header {
+            color: var(--fg2);
+        }
+        .dashboard-overview-card:hover {
+            background-color: var(--bg-highlight);
+        }
+        .table > tbody > tr > td a,
+        .table > tbody > tr > th a,
+        .table > tfoot > tr > td a,
+        .table > tfoot > tr > th a,
+        .table > thead > tr > td a,
+        .table > thead > tr > th a {
+            color: var(--fg-link) !important;
+        }
+        .table > tbody > tr > td,
+        .table > tbody > tr > th,
+        .table > tfoot > tr > td,
+        .table > tfoot > tr > th,
+        .table > thead > tr > td,
+        .table > thead > tr > th {
+            color: var(--fg2);
+        }
+        HTML[data-doctype=true] [data-type="template_footer"].template-overflow div.container-fluid a.template-item {
+            color: var(--fg-link);
+        }
+        div.breadcrumb_container {
+            background-color: var(--bg2);
+        }
+        tr[id^="hdr_"],
+        .table .table,
+        .table > tbody > tr.list_row.list_odd,
+        .table > tfoot > tr.list_row.list_odd,
+        .table > thead > tr.list_row.list_odd,
+        .table > thead > tr > th {
+            background-color: var(--bg2) !important;
+        }
+        text {
+            fill: var(--fg2) !important;
+        }
+        .btn-icon,
+        .btn-icon.focus,
+        .btn-icon:focus {
+            color: var(--fg1);
+        }
+        .icon-menu.btn-default.navbar-btn,
+        .icon-menu.navbar-btn.calTodayText,
+        .icon-menu.navbar-btn.link-btn-default {
+            color: var(--fg2);
+        }
+        button[name^=vcr_],
+        button[name^=vcr_].focus,
+        button[name^=vcr_]:focus {
+            color: var(--fg2);
+        }
+        .now-content-tree-label,
+        .now-content-tree,
+        [role='treeitem'] {
+            color: var(--fg1) !important;
+        }
+        .form_body > .tabs2_section,
+        .section-content {
+            background-color: var(--bg1);
+        }
+        #header_attachment_list li a,
+        #header_attachment_list li img {
+            color: var(--fg2);
+        }
+        #tabs2_spacer .tabs2_list.list_v2,
+        .tab_section .section,
+        .thumbnail,
+        .ui-autocomplete,
+        .well,
+        ul.tagit,
+        .form_body > .tabs2_section,
+        .section-content {
+            background-color: var(--bg1) !important;
+        }
+        .form_body,
+        table.label_left,
+        td.label_left,
+        td.label_right {
+            background-color: var(--bg1);
+        }
+        .list_filter_row .filterContainer #savelayer,
+        .list_filter_row .sn-filter-section-message > td h3,
+        .table th[sort_dir=ASC] a,
+        .table th[sort_dir=DESC] a,
+        a.list_action {
+            color: var(--fg2);
+        }
+        .input-group .input-group-addon.input-group-select select,
+        .input-group-addon.input-group-select select {
+            color: var(--fg1);
+        }
+        div.breadcrumb_container > .breadcrumb_container .breadcrumb_link {
+            color: var(--fg2);
+        }
+        .input-group-checkbox input.checkbox ~ label.checkbox-label {
+            color: var(--fg1);
+        }
+        .nav-pills > .active > a > .badge,
+        a.list-group-item.active > .badge,
+        body.-polaris .list_v2,
+        body.-polaris .section_header_content_no_scroll.form_titleless,
+        body.-polaris .section_header_content_no_scroll.form_titleless .form_body {
+            background-color: inherit;
+        }
+        .list_nav.list_nav_bottom .list_nav td input.list_row_number_input,
+        .popover-item-list #document_tags li,
+        .popover-item-list #document_tags li a.tagit-close > span,
+        .select2-default {
+            color: var(--fg2) !important;
+        }
+        button[name^=vcr_].disabled,
+        button[name^=vcr_][disabled] {
+            color: var(--fg2);
+        }
+        .form-control.focus,
+        .form-control:focus {
+            background-color: var(--bg2);
+        }
+        #header_attachment_list li a.content_editable,
+        .breadcrumb > li + li::before {
+            color: var(--fg2);
+        }
+        .has-error .control-label,
+        .has-success .control-label,
+        .has-warning .control-label,
+        .is-filled .control-label,
+        .is-filled .required-marker::before,
+        .is-prefilled .required-marker::before,
+        .is-required .control-label {
+            color: red;
+        }
+        a.navigation_link,
+        a.web {
+            color: var(--fg-link);
+        }
+        .form_body > .related-links-wrapper,
+        .glide_box.dark .gb_title_zone .tab,
+        .help-block {
+            color: var(--fg1);
+        }
+        .navbar-default .navbar-text {
+            color: var(--fg2);
+        }
+        body.-polaris .section_header_content_no_scroll {
+            background-color: var(--bg1);
+        }
+        #shadow-root,
+        .now-modal-dialog {
+            background-color: var(--bg2);
+        }
+        .btn-default.hover,
+        .btn-default:hover,
+        .calTodayText:hover,
+        .hover.calTodayText,
+        .hover.link-btn-default,
+        .link-btn-default:hover {
+            background-color: var(--bg2);
+        }
+        .form-control.hover,
+        .form-control:hover {
+            background-color: var(--bg3);
+        }
+        .input-group-radio input.radio ~ label.radio-label {
+            color: inherit;
+        }
+        .now-label-value dd {
+            color: var(--fg1);
+        }
+        .btn-default, .calTodayText, .link-btn-default {
+            color: var(--fg-dark);
+        }
+    }

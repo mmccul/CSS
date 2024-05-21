@@ -1,0 +1,132 @@
+/* ==UserStyle==
+@name           Darken the Atlantic
+@namespace      dark_theatlantic
+@version        1.0.2
+@description    Dark mode for theatlantic.com
+@author         The Hat
+==/UserStyle== */
+@-moz-document domain("theatlantic.com") {
+    :root {
+        --bg2: #222222;
+        --bg1: #373737;
+        --fg1: #dadada;
+        --fg2: #b0b0b0;
+        --bg-highlight: #37378a;
+        --fg-link: #a0a0ff;
+        --bg3: #222240;
+        --bg-tableeven: #373737;
+        --bg-tableodd: #303030;
+        --fontsz-text: 12pt;
+        --fontsz-pre: 12pt;
+        --nav-collapsed-background: var(--bg1);
+        --article-injector-ad-background: var(--bg1);
+    }
+    body,
+    #__next,
+    [class^='Nav_root__'],
+    #main-content {
+        background-color: var(--bg1) !important;
+        color: var(--fg1);
+    }
+    [class^='ArticleParagraph_root__'],
+    [class^='ArticleBody_root__'] {
+        color: var(--fg1) !important;
+        font-size: var(--fontsz-text) !important;
+    }
+    [class^='ArticleParagraph_root__'] {
+        max-width: 80% !important;
+    }
+    [class^='ArticleParagraph_root__'] a {
+        color: var(--fg-link) !important;
+    }
+    [id*=injected-recirculation-link] a {
+        color: var(--fg1) !important;
+    }
+    [class^='ArticleRelatedContentList_root'] a {
+        color: var(--fg1) !important;
+    }
+    [class^='Paywall_root'] {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    [class^='Nav_logo'] {
+        fill: var(--fg1);
+    }
+    [class^='ArticleShare_shareButton'],
+    [class^='ArticleShare_shareButton']::after {
+        color: var(--fg1);
+    }
+    [class^='ArticleLeadArt_root'] {
+        color: var(--fg2);
+    }
+    [class^='ArticleBio_social'] {
+        display: none !important;
+    }
+    [class^='ArticleMostPopular_content'] a,
+    [class^='ArticleMostPopular_content'] p {
+        color: var(--fg1) !important;
+    }
+    [class^='ArticleTitle_root'] {
+        color: var(--fg1) !important;
+    }
+    [class^='ArticleDek_root'] {
+        color: var(--fg1) !important;
+    }
+    #byline,
+    [class^='ArticleBylines_link'] {
+        color: var(--fg1);
+    }
+    [class^='NavSearchButton_searchIcon'] {
+        fill: var(--fg1) !important;
+    }
+    [class^='Search_quickLinksContainer'] {
+        background-color: var(--bg2) !important;
+    }
+    [class^='HomepageNav_root'] {
+        background-color: var(--bg2);
+    }
+    [class^='HomepageMetadata_author'] {
+        color: var(--fg2);
+    }
+    [class^='UpperBelt_dek'],
+    [class^='DoubleWide_dek'] {
+        color: var(--fg1);
+    }
+    [class^='Caption_caption'] {
+        color: var(--fg2);
+    }
+    [class^='SubOnlyPromo_root'] {
+        background-color: var(--bg3);
+    }
+    [class^='Popular_title'],
+    [class^='Writers_writerName'] {
+        color: var(--fg1);
+    }
+    [class^='Writers_writerArticle'] {
+        color: var(--fg2);
+    }
+    [class^='HomepageMetadata_datePublished'] {
+        color: var(--fg3);
+    }
+    [class^='QuadBelt_info'] > p[class^='QuadBelt_dek'] {
+        color: var(--fg2);
+    }
+    [class^='ArticleLegacyHtml_root'] > ul > li a {
+        color: var(--fg2);
+    }
+    [class^='HomepageNav_middleBigAContainer'] {
+        background-color: inherit;
+    }
+    [class^=NewsletterGrid_header] {
+        background-color: var(--bg2);
+    }
+    [class^='NewsletterCard_card'] {
+        background-color: var(--bg2);
+    }
+    [class^='NewsletterCard_cardDek'] a {
+        color: var(--fg2);
+    }
+    [class^='NewsletterCard_cardSubtitle'], [class^='NewsletterCard_preview'] {
+        color: var(--fg2);
+    }
+}
