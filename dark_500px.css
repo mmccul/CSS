@@ -1,0 +1,267 @@
+/* ==UserStyle==
+@name           Darker 500px
+@namespace      500px_dark
+@version        1.0.4
+@description    Darken 500px
+@author         The_Hat
+@var    color   bg1   "Background" "#373737"
+@var    color   bg2  "Secondary Background" "#222222"
+@var    color   fg1 "Foreground"    "#dadada"
+@var    color   fg2 "Muted Foreground"  "#b0b0b0"
+@var    color   bg-highlight    "Highlight color"   "#37378a"
+@var    color   fg-link "Link color"    "#a0a0ff"
+@var    color   bg3 "Tertiary Background"   "#222240"
+@var    color   bg-tableeven    "Table Even Row"    "#373737"
+@var    color   bg-tableodd     "Table Odd Row"     "#303030"
+@var    text    fontsize    "Font Size" "12pt"
+@var    color   darktext    "Dark text Color"   "#222222"
+@var    color   bg-blue     "Colored Dark Background"   "#000050"
+==/UserStyle== */
+@-moz-document domain("500px.com") {
+    if fg1 {
+        :root {
+            --bg1: bg1;
+            --bg2: bg2;
+            --bg-dark: bg2;
+            --bg3: bg3;
+            --fg1: fg1;
+            --fg2: fg-link;
+            --fg3: fg2;
+            --bg-highlight: bg-highlight;
+            --bg-blue: bg-blue;
+            --fg-link: fg-link;
+            --bg-tableeven: bg-tableeven;
+            --bg-tableodd: bg-tableodd;
+            --fontsz-text: fontsize;
+            --fontsz-pre: fontsize;
+            --textdark: darktext;
+            --fg: var(--fg1);
+            --bg: var(--bg1);
+        }
+    }
+    html,
+    p {
+        color: var(--fg1);
+    }
+    body {
+        background-color: var(--bg1);
+    }
+    svg {
+        background: transparent;
+    }
+    .px_tabs > li > a {
+        color: var(--fg1);
+    }
+    .px_topnav,
+    [data-id='topnav'],
+    [class='discovery__header_region'] {
+        background-color: var(--bg3);
+        color: var(--fg1);
+    }
+
+    .discovery__main_container--v1,
+    .discovery__main_container--v1 .discovery__header_region {
+        background-color: var(--bg2);
+        color: var(--fg3);
+    }
+
+    .px_tabs {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    .px_topnav__search_input input[type='text'],
+    [class*='StyledSearchBar'],
+    [class*='Button'] {
+        background-color: var(--bg2);
+        color: var(--fg1);
+        border-radius: 25px;
+    }
+
+    .discovery_body_grid_region,
+    .discovery_body,
+    body {
+        background-color: var(--bg1);
+        color: var(--fg1);
+    }
+    a[class*='StyledLink'] {
+        color: var(--fg2);
+    }
+    [class*='Styled'] {
+        color: var(--fg1);
+    }
+
+    [class*='StyledLayout__Container'],
+    [class^='Elements__ItemCardWrapper'] {
+        background-color: var(--bg2);
+    }
+    [class*='Elements__PhotoButton'] {
+        background-color: transparent;
+    }
+    h1.bold {
+        font-weight: bold;
+        color: var(--fg1);
+    }
+    [class^='StyledLayout__Box'] {
+        background-color: inherit;
+    }
+    [class*='StyledDropdownMenu']
+    {
+        background-color: var(--bg2);
+    }
+    #open-modal > [Class^='StyledLayout__Box'] {
+        background-color: var(--bg2);
+    }
+    .search-bar,
+    .search-bar input-search {
+        background-color: var(--bg2);
+        color: var(--fg3);
+    }
+    svg, path {
+        stroke: var(--fg2);
+    }
+    br {
+        color: var(--fg1);
+    }
+    div#root {
+        background-color: var(--bg1);
+    }
+    [class*='Elements__DiscoverCardInnerWrapper'],
+    [class*='Elements__DiscoverCardHead'] {
+        background-color: var(--bg2);
+    }
+    .activity_main_head.scroll_over {
+        background-color: var(--bg2);
+    }
+    [class*='StyledTopnav'] {
+        background-color: var(--bg2) !important;
+    }
+    .container .card_with_shadow,
+    .container .card_with_shadow .card_title {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    [class*='Elements__Styled'] {
+        color: var(--fg1) !important;
+    }
+    input {
+        background-color: var(--bg3) !important;
+    }
+    div.settings_main_content,
+    .container .settings_main_content,
+    .container {
+        background-color: var(--bg1) !important;
+    }
+    .container .settings_container .settings_subnav a {
+        color: var(--fg1);
+    }
+    .container .description_section,
+    .account_permission_tips .tips_title {
+        color: var(--fg1);
+    }
+    span.isvg.loaded {
+        background: transparent;
+    }
+    [class^='Elements__IconOverlay'] {
+        background: transparent;
+    }
+    .px_topnav__search_input,
+    .px_topnav__search input[type='text'] {
+        background-color: var(--bg1);
+        color: var(--fg1);
+    }
+    .px_topnav li.active > a,
+    .px_topnav .active .chevron_down svg .inline_svg_icon__fill,
+    .px_topnav a,
+    .px_topnav input,
+    .px_topnav p {
+        color: var(--fg-link);
+        fill: var(--fg-link);
+    }
+    .px_topnav__popup {
+        background-color: var(--bg2);
+    }
+    .popover .inside,
+    .category_content .contain .header {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    .category_content .contain a,
+    .category_content .contain a.selected {
+        color: var(--fg1);
+    }
+    .checkbox {
+        background-color: var(--bg1);
+    }
+    .px_tabs > li.active > a {
+        color: var(--fg-link);
+        border-bottom: 2px solid var(--fg-link);
+    }
+    [role='tablist'] {
+        background-color: var(--bg-dark);
+    }
+
+    [class^='Elements__PhotoBackButtonWrapper'] {
+        background-color: inherit;
+    }
+    .horizontal_tab_main {
+        background-color: inherit;
+    }
+    [class^='Elements__ModalBox'] {
+        background-color: var(--bg2);
+    }
+    #edit-panel-description-label ~ textarea {
+        background-color: var(--bg2);
+    }
+    .popover-wrapper .popover {
+        background-color: var(--bg2);
+    }
+    .manage_main_layout {
+        background-color: var(--bg1);
+    }
+    .edit-panel--form__wrapper {
+        background: var(--bg2);
+    }
+    .manage_index_layout .manage_head_tab, .manage_index_layout .manage_head_title, .main_cmp_layout .left_photo_layout .filter_layout {
+        background-color: var(--bg1);
+        color: var(--fg1);
+    }
+    .photos_wrapper .title {
+        color: var(--fg1);
+    }
+    .photos_wrapper .desc {
+        color: var(--fg1);
+    }
+    [role='tabpanel'] {
+        background-color: var(--bg1);
+    }
+    [class*='Elements__PhotoStatTooltip'] {
+        background-color: var(--bg3);
+    }
+    [class^='Elements__FPCardWrapper'] {
+        background: var(--bg2);
+    }
+    input[type='text'][placeholder='Search 500px']  {
+        color: var(--fg1);
+    }
+    [class^='Elements__LoginContainer'] {
+        background: var(--bg2);
+    }
+    [class^='Elements__StyledFooter'] {
+        background: var(--bg2);
+    }
+    [class^='Elements__StyledSearch'] {
+        background: var(--b2);
+    }
+    [class^='Elements__StyledFilterWrapper'] {
+        background: var(--bg2);
+    }
+    [class^='Element__PhotoTag'] {
+        background: var(--bg2);
+    }
+    #searchInput {
+        color: var(--fg1);
+    }
+    [class^='Elements__CategoryWrapper-sc'] {
+        background: var(--bg2);
+    }
+}
