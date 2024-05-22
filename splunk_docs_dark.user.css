@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name Splunk Docs Dark
 @namespace splunk_docs_dark
-@version        1.4.2
+@version        1.4.3
 @description Dark mode for Splunk docs
 @author         The_Hat
 @preprocessor   stylus
@@ -288,7 +288,18 @@
     .logo-wrapper img.splunk-logo.logo-image {
         filter: none !important;
     }
-    
+    #detail-page #accordion .panel-body, #detail-page #accordionDesktop .panel-body {
+        background-color: inherit;
+    }
+    #detail-page #accordion .panel-body ul li.selected, #detail-page #accordionDesktop .panel-body ul li.selected, #detail-page #accordion .panel-body ul li.selected a, #detail-page #accordionDesktop .panel-body ul li.selected a {
+        background: inherit;
+    }
+    #right-nav > ul > li a {
+        color: var(--fg2);
+    }
+    #right-nav h2 a {
+        color: var(--fg2);
+    }
 }
 @-moz-document url-prefix("https://docs.splunk.com/observability") {
     /* The observability section broke a lot of things, clearly using a different foundation.  Adding a section allows us to handle that without
