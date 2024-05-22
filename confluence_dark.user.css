@@ -59,7 +59,6 @@ For this page to work, you MUST edit the below domain entry to that for your con
         }
     }
     :root {
-        /* --aui-page-background: var(--bg1); */
         color-scheme: dark;
     --aui-shadow1: rgba(9,30,66,0.13);
     --aui-shadow2: rgba(9,30,66,0.25);
@@ -185,14 +184,14 @@ For this page to work, you MUST edit the below domain entry to that for your con
     --aui-form-disabled-field-label-color: #97a0af;
     --aui-form-field-border-color: #dfe1e6;
     --aui-form-field-hover-border-color: #dfe1e6;
-    --aui-form-field-default-text-color: #172b4d;
-    --aui-form-field-default-bg-color: #fafbfc;
+    --aui-form-field-default-text-color: var(--fg1);
+    --aui-form-field-default-bg-color: var(--bg2);
     --aui-form-field-hover-text-color: var(--aui-form-field-default-text-color);
-    --aui-form-field-hover-bg-color: #ebecf0;
-    --aui-form-field-focus-bg-color: #fff;
-    --aui-form-select-bg-color: #ebecf0;
+    --aui-form-field-hover-bg-color: var(--bg-highlight);
+    --aui-form-field-focus-bg-color: var(--bg2);
+    --aui-form-select-bg-color: var(--bg-highlight);
     --aui-form-select-border-color: #ebecf0;
-    --aui-form-select-hover-bg-color: #dfe1e6;
+    --aui-form-select-hover-bg-color: var(--bg1);
     --aui-form-checkbox-radio-hover-bg-color: #0065ff;
     --aui-form-checkbox-radio-active-bg-color: #deebff;
     --aui-form-optgroup-text-color: #7a869a;
@@ -433,5 +432,10 @@ For this page to work, you MUST edit the below domain entry to that for your con
    .label-list, .label-list .labels-edit-container .aui-iconfont-devtools-tag-small {
        color: var(--fg2);
    }
-   
+   td.modified {
+       color: var(--fg2);
+   }
+   .confluence-information-macro {
+       color: var(--fg2);
+   }
 }
