@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name Splunk Docs Dark
 @namespace splunk_docs_dark
-@version        1.4.3
+@version        1.4.4
 @description Dark mode for Splunk docs
 @author         The_Hat
 @preprocessor   stylus
@@ -298,6 +298,19 @@
         color: var(--fg2);
     }
     #right-nav h2 a {
+        color: var(--fg2);
+    }
+    section#homepage-hero {
+        filter: hue-rotate(180deg) invert();
+        color: var(--textdark);
+    }
+    #homepage-hero h1 {
+        color: var(--textdark) !important;
+    }
+    #homepage-body ul li a {
+        color: var(--fg2);
+    }
+    .breadcrumb > li a:visited, .breadcrumb > li a {
         color: var(--fg2);
     }
 }
