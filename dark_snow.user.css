@@ -1,7 +1,7 @@
     /* ==UserStyle==
 @name           Dark SNOW Parameterized
 @namespace      dark_snow_param
-@version        1.3.5
+@version        1.3.7
 @description    A darker SNOW, with parameters for customization
 @author         The_Hat
 @preprocessor   stylus
@@ -57,9 +57,10 @@
             }
         }
         body {
-            --now-global-font-size--xs: 12pt;
-            --now-global-font-size--md: 12pt;
-            --now-global-font-size--sm: 12pt;
+            /* These entries here are kludges for shadow roots that cannot be directly styled without a greasemonkey script, so we just override some variables */
+            --now-global-font-size--xs: var(--fontsize);
+            --now-global-font-size--md: var(--fontsize);
+            --now-global-font-size--sm: var(--fontsize);
             --now-global-font-size--lg: 16pt;
             --now-global-font-size--xl: 20pt;
             --now-global-font-size--xxl: 24pt;
@@ -511,14 +512,13 @@
         .grid-stack-item-content,
         .chart-container,
         .highcharts-container,
-        .highcharts-root,
-        .highcharts-root rect {
+        .highcharts-root {
             background-color: var(--bg2);
             fill: var(--bg2);
         }
-        .highcharts-legend-box {
+        /* .highcharts-legend-box {
             filter: invert(180);
-        }
+        }*/ 
         HTML[data-doctype=true] td.list_group {
             background-color: var(--bg2);
         }
@@ -717,5 +717,14 @@
         }
         .btn-default, .calTodayText, .link-btn-default {
             color: var(--fg-dark);
+        }
+        .grid-stack-item-content, .chart-container, .highcharts-container, .highcharts-root, .highcharts-root rect {
+            background-color: inherit;
+        }
+        rect.highcharts-legend-box {
+            fill: var(--bg2) !important;
+        }
+        .sn-card-component {
+            font-size: var(--fontsize);
         }
     }
