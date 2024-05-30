@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name Splunk Docs Dark
 @namespace splunk_docs_dark
-@version        1.4.6
+@version        1.4.7
 @description Dark mode for Splunk docs
 @author         The_Hat
 @preprocessor   stylus
-@license    CC-BY-4.0
+@license    CC-BY-2.5
 @var    color   bg1   "Background" "#373737"
 @var    color  bg2  "Secondary Background" "#222222"
 @var    color   fg1 "Foreground"    "#dadada"
@@ -35,6 +35,7 @@
             --fontsize: fontsize;
             --textdark: darktext;
             --lightbg: lightbg;
+
             --fontsz-pre: var(--fontsize, 12pt);
             --fontsz-text: var(--fontsize, 12pt);
             /* --textdark: var(--textdark, #222222); */
@@ -288,35 +289,51 @@
     .logo-wrapper img.splunk-logo.logo-image {
         filter: none !important;
     }
-    #detail-page #accordion .panel-body, #detail-page #accordionDesktop .panel-body {
-        background-color: inherit;
+    #detail-page #accordion .panel-body ul li.selected, #detail-page #accordionDesktop .panel-body ul li.selected {
+        background-color: var(--bg1);
     }
-    #detail-page #accordion .panel-body ul li.selected, #detail-page #accordionDesktop .panel-body ul li.selected, #detail-page #accordion .panel-body ul li.selected a, #detail-page #accordionDesktop .panel-body ul li.selected a {
+    #detail-page #accordion .panel-body ul li, #detail-page #accordionDesktop .panel-body ul li {
+        background-color: var(--bg2);
+    }
+    #detail-page #accordion .panel-heading.selected, #detail-page #accordionDesktop .panel-heading.selected {
+        background-color: var(--bg3);
+        color: var(--fg1);
+    }
+    #detail-page #accordion .panel-heading.selected a, #detail-page #accordionDesktop .panel-heading.selected a {
+        color: var(--fg2);
+    }
+    #detail-page .navbar-header {
+        background-color: var(--bg3) !important;
+    }
+    #detail-page #desktop-menu-header .navbar-header a {
+        color: var(--fg2);
+    }
+    #detail-page .icon-bar {
+        background-color: var(--light-bg);
+    }
+    #right-nav > ul > li a, #right-nav h2 a {
+        color: var(--fg2);
+    }
+    .related-container #related ul li a, #detail-page label {
+        color: var(--fg2);
+    }
+    #detail-page #accordion .panel-body ul li.selected a, #detail-page #accordionDesktop .panel-body ul li.selected a {
         background: inherit;
     }
-    #right-nav > ul > li a {
-        color: var(--fg2);
+    #body-details .paging tr {
+        background-color: var(--bg1) !important;
     }
-    #right-nav h2 a {
-        color: var(--fg2);
-    }
-    section#homepage-hero {
-        filter: hue-rotate(180deg) invert();
-        color: var(--textdark);
-    }
-    #homepage-hero h1 {
-        color: var(--textdark) !important;
-    }
-    #homepage-body ul li a {
-        color: var(--fg2);
+    .arrow-previous > a > svg > path, .arrow-next > a > svg > path {
+        fill: var(--fg2);
     }
     .breadcrumb > li a:visited, .breadcrumb > li a {
         color: var(--fg2);
     }
+    #search-page-container .sui-app {
+        background-color: inherit;
+    }
 }
 @-moz-document url-prefix("https://docs.splunk.com/observability") {
-    /* The observability section broke a lot of things, clearly using a different foundation.  Adding a section allows us to handle that without
-       risk to anything above. */
     body {
         background-color: var(--bg1) !important;
         color: var(--fg1) !important;
