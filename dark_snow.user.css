@@ -749,4 +749,17 @@
         .avatar-container .avatar.soloAvatar {
             background-color: var(--bg-highlight);
         }
+        .dropdown-menu {
+            background-color: var(--bg2);
+        }
+        .dropdown-menu > li > a {
+            color: var(--fg2);
+        }
+        .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+            color: var(--fg2);
+            background-color: var(--bg-highlight);
+        }
+        body > div > section.flex-grow.page.sp-scroll {
+            background-color: var(--bg1);
+        }
     }
