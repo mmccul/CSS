@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darker 500px
 @namespace      500px_dark
-@version        1.0.4
+@version        1.0.5
 @description    Darken 500px
 @author         The_Hat
 @var    color   bg1   "Background" "#373737"
@@ -263,5 +263,28 @@
     }
     [class^='Elements__CategoryWrapper-sc'] {
         background: var(--bg2);
+    }
+    [class^='Element__StyledCard'] {
+        background-color: var(--bg2);
+    }
+    [class^='Element__StyleCardDesc'] {
+        color: var(--fg2);
+    }
+    [class^='Elements__StyledHeader'] {
+        background-color: inherit;
+    }
+    #settings-tabs [class^='StyledLayout__Box']:hover {
+        background-color: var(--bg-highlight);
+        color: var(--fg1);
+    }
+    [class^='Elements__StyledMenuItem']:hover,
+    #settings-tabs div:hover p span {
+        color: var(--fg1);
+    }
+    [class^='Elements__SettingCard'] {
+        background-color: var(--bg2);
+    }
+    [class^='Elements__SettingCard'] [class^='Elements__Tips'] {
+        color: var(--fg2);
     }
 }
