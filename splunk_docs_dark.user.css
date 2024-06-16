@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name Splunk Docs Dark
 @namespace splunk_docs_dark
-@version        1.4.7
+@version        1.4.8
 @description Dark mode for Splunk docs
 @author         The_Hat
 @preprocessor   stylus
@@ -332,6 +332,15 @@
     #search-page-container .sui-app {
         background-color: inherit;
     }
+    #homepage-body ul li a {
+        color: var(--fg2);
+    }
+    #overview-body {
+        background-color: var(--bg2);
+    }
+    #docs-tabs ul.tabs > li a {
+        color: var(--fg2);
+    }
 }
 @-moz-document url-prefix("https://docs.splunk.com/observability") {
     body {
@@ -375,4 +384,5 @@
     .signalfxmodal-content {
         background-color: var(--bg3);
     }
+
 }
