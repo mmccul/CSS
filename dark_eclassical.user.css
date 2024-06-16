@@ -3,9 +3,9 @@
 @namespace    USO Archive
 @author       The_Hat
 @description  Make eclassical.com less glaring white
-@version      20240520
+@version      20240616
 @license      CC-BY-4.0
-@preprocessor uso
+@preprocessor stylus
 @var    color   bg1   "Background" "#373737"
 @var    color  bg2  "Secondary Background" "#222222"
 @var    color   fg1 "Foreground"    "#dadada"
@@ -21,34 +21,45 @@
 ==/UserStyle== */
 @-moz-document domain("eclassical.com") {
     if fg1 {
-        --bg: bg1;
-        --bg1: bg1;
-        --bg2: bg2;
-        --fg1: fg1;
-        --fg2: fg2;
-        --bg-highlight: bg-highlight;
-        --fg-link: fg-link;
-        --fontsize: fontsize;
-        --fg-dark: darktext;
-        --bg-light: lightbg;
-        --bg-tableeven: bg-tableeven;
-        --bg-tableodd: bg-tableodd;
-
-        color: var(--fg2);
-    } else {
-    :root {
-        --bg: #202020;
-        --bg2: #000000;
-        --bg3: #505050;
-        --bg4: #303030;
-        --fg: #d0d0d0;
-        --fg2: #a0a0e0;
-        --fg-link: #9090ff;
-        --fontsize: 16px;
-        --fontfamily: serif;
-
-        color: var(--fg2);
+        :root {
+            --bg: bg1;
+            --bg1: bg1;
+            --bg2: bg2;
+            --bg3: bg3;
+            --bg4: bg4;
+            --fg1: fg1;
+            --fg2: fg2;
+            --bg-highlight: bg-highlight;
+            --fg-link: fg-link;
+            --fontsize: fontsize;
+            --fg-dark: darktext;
+            --bg-light: lightbg;
+            --bg-tableeven: bg-tableeven;
+            --bg-tableodd: bg-tableodd;
+            color: var(--fg2);
+        }
     }
+    else { 
+        :root {
+            --bg: #202020;
+            --bg1: #222;
+            --bg2: #000000;
+            --bg3: #505050;
+            --bg4: #303030;
+            --bg-highlight: #37378a;
+            --fg1: #d0d0d0;
+            --fg2: #a0a0e0;
+            --fg-link: #9090ff;
+            --fontsize: 16px;
+            --fg-dark: #222;
+            --bg-light: #c8c8c8;
+            --bg-tableeven: #373737;
+            --bg-tableodd: #303030;
+            color: var(--fg2);
+        }
+    } 
+    :root {
+        --fontfamily: serif;
     }
     body {
         font-size: var(--fontsize);
@@ -60,7 +71,7 @@
     .static-left-menu,
     .ui-widget-content,
     .ui-corner-bottom {
-        background-color: var(--bg);
+        background-color: var(--bg1);
         color: var(--fg);
     }
     [role*=link],
