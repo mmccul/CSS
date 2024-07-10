@@ -566,4 +566,10 @@ For this page to work, you MUST edit the below domain entry to that for your con
         color: var(--fg2);
         text-decoration: line-through;
     }
+    #com-atlassian-confluence, iframe {
+        background-color: var(--bg2) !important;
+    }
+    #mw-container .mw-drilldown, #mw-container .mw-notifications, #mw-container .mw-notification-drilldown, #mw-container .mw-taskdetail, #mw-container .mw-tasks {
+        background: var(--bg2);
+    }
 }
