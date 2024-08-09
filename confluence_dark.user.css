@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Confluence
 @namespace      confluence_dark
-@version        20240610
+@version        20240630
 @description    Darken Confluence, smoother than most efforts I've seen.
 @author         The_Hat
 @preprocessor   stylus
@@ -229,7 +229,7 @@ For this page to work, you MUST edit the below domain entry to that for your con
         --aui-progressbar-color: #42526e;
         --aui-progressbar-track-color: rgba(9, 30, 66, 0.13);
         --aui-spinner-color: #42526e;
-        --aui-nav-pagination-text-color: #172b4d;
+        --aui-nav-pagination-text-color: var(--fg2);
         --aui-nav-pagination-active-text-color: #97a0af;
         --aui-appheader-bg-color: #0747a6;
         --aui-appheader-text-color: #deebff;
@@ -264,7 +264,7 @@ For this page to work, you MUST edit the below domain entry to that for your con
         --aui-progress-tracker-future-step-color: #a5adba;
         --aui-progress-tracker-future-step-text-color: #5e6c84;
         --aui-table-row-bg-color: transparent;
-        --aui-table-row-text-color: #172b4d;
+        --aui-table-row-text-color: var(--fg2);
         --aui-table-header-bg-color: transparent;
         --aui-table-heading-text-color: #6b778c;
         --aui-table-border-color: #dfe1e6;
@@ -520,6 +520,7 @@ For this page to work, you MUST edit the below domain entry to that for your con
     #wysiwyg iframe,
     #preview iframe,
     body.mceContentBody,
+    [stylus-iframe^='wysiwyg'],
     html[stylus-iframe*="confluence"] body,
     html[stylus-iframe*="confluence"] body#tinymce,
     html[stylus-iframe*="confluence"] body.mceContentBody {
@@ -532,11 +533,11 @@ For this page to work, you MUST edit the below domain entry to that for your con
     .aui-button.aui-button-link {
         color: var(--fg-link);
     }
-    .code,
+    /* .code, 
     .preformatted,
-    .syntaxhighlighter table td.code {
+    .syntaxhighlighter table td.code  {
         background-color: var(--bg2);
-    }
+    } */
     .syntaxhighlighter.sh-rdark .line.alt2,
     .syntaxhighlighter.sh-rdark .line.alt1 {
         background-color: var(--bg2) !important;
@@ -559,10 +560,18 @@ For this page to work, you MUST edit the below domain entry to that for your con
     [class^='SearchContentItem_search-content-item-component']:focus {
         background-color: var(--bg-highlight);
     }
-    .aui-toolbar .aui-buttons .toolbar-item-link:hover button.toolbar-trigger, .aui-toolbar .aui-buttons .toolbar-item-link button.toolbar-trigger, .aui-navgroup-horizontal .aui-nav > li a, .aui-dialog .dialog-page-menu li.page-menu-item button.item-button, body.spaces .aui-tabs > .tabs-menu .menu-item a, body.spaces .aui-tabs > .tabs-menu .menu-item a:link, body.spaces .aui-tabs > .tabs-menu .menu-item a:visited {
+    .aui-toolbar .aui-buttons .toolbar-item-link:hover button.toolbar-trigger,
+    .aui-toolbar .aui-buttons .toolbar-item-link button.toolbar-trigger,
+    .aui-navgroup-horizontal .aui-nav > li a,
+    .aui-dialog .dialog-page-menu li.page-menu-item button.item-button,
+    body.spaces .aui-tabs > .tabs-menu .menu-item a,
+    body.spaces .aui-tabs > .tabs-menu .menu-item a:link,
+    body.spaces .aui-tabs > .tabs-menu .menu-item a:visited {
         color: var(--fg-link);
     }
-    .wiki-content ul.inline-task-list>li.checked, .wiki-content ul.inline-task-list>li.checked>*, .wiki-content ul.inline-task-list>li.checked>*>a {
+    .wiki-content ul.inline-task-list > li.checked,
+    .wiki-content ul.inline-task-list > li.checked > *,
+    .wiki-content ul.inline-task-list > li.checked > * > a {
         color: var(--fg2);
         text-decoration: line-through;
     }
@@ -571,5 +580,8 @@ For this page to work, you MUST edit the below domain entry to that for your con
     }
     #mw-container .mw-drilldown, #mw-container .mw-notifications, #mw-container .mw-notification-drilldown, #mw-container .mw-taskdetail, #mw-container .mw-tasks {
         background: var(--bg2);
+    }
+    body.mceContentBody {
+        background-color: var(--bg2);
     }
 }
