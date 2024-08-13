@@ -223,4 +223,9 @@
     .pagebrows-bar span.current {
         background-color: var(--bg2);
     }
+    td.articlegroup > a,
+    a.list:link,
+    .gridTitle, .shopwindowcustom1 .shopwindow_custom_text h2 {
+        font-size: var(--fontsize);
+    }
 }
