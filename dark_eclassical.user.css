@@ -220,4 +220,7 @@
     .rubrik_dark {
         font-size: var(--fontsize);
     }
+    .pagebrows-bar span.current {
+        background-color: var(--bg2);
+    }
 }
