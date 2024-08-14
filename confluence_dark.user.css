@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Confluence
 @namespace      confluence_dark
-@version        20240630
+@version        20240814
 @description    Darken Confluence, smoother than most efforts I've seen.
 @author         The_Hat
 @preprocessor   stylus
@@ -331,6 +331,7 @@ For this page to work, you MUST edit the below domain entry to that for your con
         --aui-btn-text: var(--fg2);
         --aui-button-default-text-color: var(--fg2);
         --aui-form-description-text-color: var(--fg2);
+        --ds-background-accent-gray-subtle-hovered: var(--bg-highlight);
     }
     body,
     #full-height-container {
