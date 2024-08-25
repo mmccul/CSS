@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           The Reg Goes Dark
 @namespace      github.com/openstyles/stylus
-@version        20240523
+@version        20240602
 @description    The Register comes to the dark side
 @author         TheHat
 @var    color   bg1   "Background" "#373737"
@@ -17,6 +17,7 @@
 @var    color   darktext    "Dark text Color"   "#222222"
 @var    color   lightbg     "Light background for transparent pngs" "#c8c8c8"
 @var    color   mast_color  "The Masthead Color"    "#600"
+@var    color   real_dark   "Very dark background"  "#000"
 ==/UserStyle== */
 @-moz-document domain("theregister.com"),
 domain("theregister.co.uk") {
@@ -36,6 +37,7 @@ domain("theregister.co.uk") {
             --fontsize: fontsize;
             --darktext: darktext;
             --lightbg: lightbg;
+            --real_dark: real_dark;
         }
     }
     else {
@@ -53,13 +55,16 @@ domain("theregister.co.uk") {
             --bg-tableodd: #303030;
             --fontsize-pre: 12pt;
             --fontsize-text: 12pt;
+            --fontsize: var(--fontsize);
             --light-bg: #c8c8c8;
             --mast_color: #600;
+            --real_dark: #000;
         }
     }
     body {
         background-color: var(--bg1);
         color: var(--fg1);
+        font-size: var(--fontsize);
     }
     #article h2 {
         color: var(--fg1);
@@ -91,7 +96,10 @@ domain("theregister.co.uk") {
     #masthead .center_nav,
     #masthead .right_nav {
         background: var(--mast_color);
-        box-shadow: -2000px 0px var(--mast_color), -1000px 0px #600, 1000px 0px #600, 2000px 0px #600;
+        box-shadow: -2000px 0px var(--mast_color), -1000px 0px var(--mast_color), 1000px 0px var(--mast_color), 2000px 0px var(--mast_color); 
+    }
+    #masthead .left_nav {
+        z-index: 1;
     }
     #masthead #top_panel_wrapper {
         background: var(--bg2);
@@ -738,5 +746,21 @@ domain("theregister.co.uk") {
     }
     #main-col #coloumnist_bio a {
         color: var(--fg-link);
+    }
+    .rt-9as, .rt-9bs, .rt-9cs, .rt-9bs .other_stories, .rt-9cs .other_stories {
+        background: inherit;
+    }
+    #main-col .myaccount_wrap .left_account #settings_tab_nav li.current_section {
+        background: var(--mast_color);
+    }
+    #main-col .myaccount_wrap .left_account #settings_tab_nav li.current_section::after {
+        border-left: 1em solid var(--mast_color);
+    }
+    #main-col .myaccount_wrap .left_account #settings_tab_nav li {
+        background: var(--real_dark);
+        color: var(--fg1);
+    }
+    #main-col .submit_btn {
+        color: var(--fg2);
     }
 }
