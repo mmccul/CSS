@@ -287,4 +287,10 @@
     [class^='Elements__SettingCard'] [class^='Elements__Tips'] {
         color: var(--fg2);
     }
+    [class^='Elements2__StyledPhotoCard'] {
+        background-color: var(--bg2);
+    }
+    [class*='Elements__StyledTab-sc'] [class*='Elements__StyledTabLabel'] span {
+        color: var(--fg1);
+    }
 }
