@@ -3,7 +3,7 @@
 @namespace    USO Archive
 @author       The_Hat
 @description  Make eclassical.com less glaring white
-@version      20240825
+@version      20240901
 @license      CC-BY-4.0
 @preprocessor stylus
 @var    color   bg1   "Background" "#373737"
@@ -227,5 +227,8 @@
     a.list:link,
     .gridTitle, .shopwindowcustom1 .shopwindow_custom_text h2 {
         font-size: var(--fontsize);
+    }
+    .ui-widget-content a {
+        color: var(--fg1);
     }
 }
