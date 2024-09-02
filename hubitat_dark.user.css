@@ -23,7 +23,7 @@
     "Sans-serif": "sans-serif"
 }
 ==/UserStyle== */
-@-moz-document domain("192.168.1.1") {
+@-moz-document domain("192.168.1.1"), domain("heim.local") {
     if fg1 {
         :root {
             /* To change the variable choices now, you edit the userstyles variable definitions at the top */
@@ -44,9 +44,10 @@
             --fontsz-text: var(--fontsize, 12pt);
             /* --textdark: var(--textdark, #222222); */
             --light-bg: var(--lightbg, #c8c8c8);
-            --fontfamily: fontfamily;
+            --font-family: fontfamily;
             --surface-ground: var(--bg2);
             --surface-700: var(--fg2);
+            --tw-text-opacity: var(--fg2);
         }
     }
     else {
@@ -65,12 +66,14 @@
             --fontsize-pre: 12pt;
             --fontsize-text: 12pt;
             --light-bg: #c8c8c8;
-            --fontfamily: "Serif";
+            --font-family: "Serif";
         }
     }
     body,
     html {
-        font-family: var(--fontfamily);
+        font-family: var(--font-family);
+        font-size: var(--fontsize);
+        color: var(--fg1);
     }
     a {
         color: var(--fg-link) !important;
@@ -159,6 +162,50 @@
         background-color: var(--bg2);
     }
     .p-button.p-button-text {
+        color: var(--fg2);
+    }
+    .mdl-card__title {
+        color: var(--fg2);
+    }
+    .SumoSelect>.CaptionCont {
+        background-color: var(--bg2);
+    }
+    input {
+        background-color: var(--bg2);
+    }
+    .mdl-button:hover, input[type=submit] {
+        background-color: var(--bg3);
+        color: var(--fg2);
+    }
+    .selected:hover,
+    .SumoSelect>.optWrapper>.options li.opt:hover {
+        background-color: var(--bg-highlight);
+    }
+    .selected, .SumoSelect>.optWrapper>.options li.opt {
+        background-color: var(--bg2);
+    }
+    .p-dialog .p-dialog-header, .p-dialog .p-dialog-content, .p-dialog .p-dialog-footer {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    .p-inputtext {
+        color: var(--fg1);
+        background-color: var(--bg2);
+    }
+    .tileArea {
+        background-color: var(--bg1);
+    }
+    .p-picklist .p-picklist-list-wrapper {
+        background-color: var(--bg1);
+    }
+    .p-picklist .p-picklist-list .p-picklist-item {
+        color: var(--fg1);
+    }
+    .text-neutral-100 {
+        color: var(--fg1);
+    }
+    .bg-off-background {
+        background-color: var(--bg2);
         color: var(--fg2);
     }
 }
