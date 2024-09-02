@@ -1,0 +1,155 @@
+/* ==UserStyle==
+@name           Hubitat Dark
+@namespace      github.com/openstyles/stylus
+@version        20240902
+@description    Dark mode for Hubitat web
+@author         TheHat
+@preprocessor   stylus
+@license    CC-BY-2.5
+@var    color   bg1   "Background" "#373737"
+@var    color  bg2  "Secondary Background" "#222222"
+@var    color   fg1 "Foreground"    "#dadada"
+@var    color   fg2 "Muted Foreground"  "#b0b0b0"
+@var    color   bg-highlight    "Highlight color"   "#37378a"
+@var    color   fg-link "Link color"    "#a0a0ff"
+@var    color   bg3 "Tertiary Background"   "#222240"
+@var    color   bg-tableeven    "Table Even Row"    "#373737"
+@var    color   bg-tableodd     "Table Odd Row"     "#303030"
+@var    text    fontsize    "Font Size" 12pt
+@var    color   darktext    "Dark text Color"   "#222222"
+@var    color   lightbg     "Light background for transparent pngs" "#c8c8c8"
+@var    select  fontfamily  "Font Family" {
+    "Serif": "serif",
+    "Sans-serif": "sans-serif"
+}
+==/UserStyle== */
+@-moz-document domain("192.168.1.1") {
+    if fg1 {
+        :root {
+            /* To change the variable choices now, you edit the userstyles variable definitions at the top */
+            --bg1: bg1;
+            --bg2: bg2;
+            --bg3: bg3;
+            --fg1: fg1;
+            --fg2: fg2;
+            --bg-highlight: bg-highlight;
+            --fg-link: fg-link;
+            --bg-tableeven: bg-tableeven;
+            --bg-tableodd: bg-tableodd;
+            --fontsize: fontsize;
+            --textdark: darktext;
+            --lightbg: lightbg;
+
+            --fontsz-pre: var(--fontsize, 12pt);
+            --fontsz-text: var(--fontsize, 12pt);
+            /* --textdark: var(--textdark, #222222); */
+            --light-bg: var(--lightbg, #c8c8c8);
+            --fontfamily: fontfamily;
+            --surface-ground: var(--bg2);
+            --surface-700: var(--fg2);
+        }
+    }
+    else {
+        /* If you are not using Stylus, remove the conditional if block above, remove the else directive and the matching close
+           bracket then leave the below :root stanza.  Conditionals are a Stylus unique extension */
+        :root {
+            --bg1: #373737;
+            --bg2: #222222;
+            --bg3: #222240;
+            --fg1: #dadada;
+            --fg2: #b0b0b0;
+            --bg-highlight: #37378a;
+            --fg-link: #a0a0ff;
+            --bg-tableeven: #373737;
+            --bg-tableodd: #303030;
+            --fontsize-pre: 12pt;
+            --fontsize-text: 12pt;
+            --light-bg: #c8c8c8;
+            --fontfamily: "Serif";
+        }
+    }
+    body,
+    html {
+        font-family: var(--fontfamily);
+    }
+    a {
+        color: var(--fg-link) !important;
+    }
+    .mdl-grid,
+    #divMainUIContent {
+        background-color: var(--bg1);
+        color: var(--fg1);
+    }
+    #divAppUIContainer {
+        background-color: var(--bg2);
+    }
+    .btn-default {
+        color: var(--fg2) !important;
+    }
+    #settings[btnMainMenu],
+    button.mdl-button,
+    .p-button {
+        background-color: var(--bg3) !important;
+        color: var(--fg1);
+    }
+    [class^="text"] {
+        color: var(--fg1);
+    }
+    .mdl-card,
+    .surface-ground {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    tr:nth-child(even),
+    .p-treetable .p-treetable-tbody > tr:nth-child(even),
+    .p-treetable .p-treetable-tbody > tr:has(td>.app-grid-child):nth-child(even),
+    .p-treetable .p-treetable-tbody > tr:has(td>.device-grid-child):nth-child(even),
+    .p-treetable .p-treetable-tbody > tr:has(td>.room-grid-child):nth-child(even) {
+        background-color: var(--bg-tableeven) !important;
+    }
+    tr:nth-child(odd),
+    .p-treetable .p-treetable-tbody > tr:nth-child(odd),
+    .p-treetable .p-treetable-tbody > tr:has(td>.app-grid-child):nth-child(odd),
+    .p-treetable .p-treetable-tbody > tr:has(td>.device-grid-child):nth-child(odd),
+    .p-treetable .p-treetable-tbody > tr:has(td>.room-grid-child):nth-child(odd) {
+        background-color: var(--bg-tableodd) !important;
+    }
+    td {
+        background-color: inherit !important;
+    }
+    .p-treetable .p-treetable-tbody>tr {
+        color: var(--fg2);
+    }
+    .p-treetable .p-treetable-tfoot>tr>td, .p-treetable .p-treetable-thead>tr>th {
+        color: var(--fg1);
+        background-color: var(--bg2);
+        font-weight: bold;
+    }
+    .p-datatable .p-datatable-tbody>tr {
+        color: var(--fg2);
+    }
+    ::selection {
+        background: inherit;
+    }
+    .p-tabview-nav-content {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    .p-tabview .p-tabview-nav {
+        background-color: var(--bg2);
+    }
+    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+        background-color: var(--bg-highlight);
+    }
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+        background-color: var(--bg2);
+    }
+    .p-tabview .p-tabview-panels {
+        background-color: var(--bg1);
+        color: var(--fg1);
+    }
+    .p-panel .p-panel-content, .p-panel .p-panel-header {
+        background-color: var(--bg2);
+        color: var(--fg2);
+    }
+}
