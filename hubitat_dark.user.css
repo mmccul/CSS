@@ -152,4 +152,13 @@
         background-color: var(--bg2);
         color: var(--fg2);
     }
+    .bg-light-gray {
+        background-color: var(--bg1);
+    }
+    .bg-white {
+        background-color: var(--bg2);
+    }
+    .p-button.p-button-text {
+        color: var(--fg2);
+    }
 }
