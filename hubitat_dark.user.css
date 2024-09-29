@@ -23,7 +23,7 @@
     "Sans-serif": "sans-serif"
 }
 ==/UserStyle== */
-@-moz-document domain("192.168.1.1"), domain("heim.local") {
+@-moz-document domain("192.0.2.1"), domain("hubitat.local") {
     if fg1 {
         :root {
             /* To change the variable choices now, you edit the userstyles variable definitions at the top */
@@ -45,6 +45,7 @@
             /* --textdark: var(--textdark, #222222); */
             --light-bg: var(--lightbg, #c8c8c8);
             --font-family: fontfamily;
+            /* A few custom variables specific to this stylesheet */
             --surface-ground: var(--bg2);
             --surface-700: var(--fg2);
             --tw-text-opacity: var(--fg2);
@@ -208,4 +209,21 @@
         background-color: var(--bg2);
         color: var(--fg2);
     }
+    .p-overlaypanel {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    .btn-default:hover, .btn-default.disabled, .btn-default[disabled] {
+        background-color: var(--bg-highlight);
+    }
+    .nav>li>a:hover {
+        background-color: var(--bg-highlight);
+    }
+    .settings-container table.mdl-data-table tr.settings-section-row:hover {
+        background-color: var(--bg-highlight) !important;
+    }
+    .hover\:bg-gray-300:hover {
+        background-color: var(--bg-highlight) !important;
+    }
+
 }
