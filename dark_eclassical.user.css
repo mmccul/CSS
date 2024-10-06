@@ -3,7 +3,7 @@
 @namespace    USO Archive
 @author       The_Hat
 @description  Make eclassical.com less glaring white
-@version      20240901
+@version      20241006
 @license      CC-BY-4.0
 @preprocessor stylus
 @var    color   bg1   "Background" "#373737"
@@ -149,15 +149,22 @@
     }
     #myDownloadAlbumsTable tr.even td.sorting_3,
     #myDownloadAlbumsTable tr.even td.sorting_2,
-    #myDownloadAlbumsTable tr.even td.sorting_1 {
-        background-color: var(--bg) !important;
+    #myDownloadAlbumsTable tr.even td.sorting_1,
+    #myDownloadAlbumsTable tr:nth-of-type(even) td {
+        background-color: var(--bg-tableeven) !important;
         color: var(--fg2) !important;
     }
     #myDownloadAlbumsTable tr.odd td.sorting_3,
     #myDownloadAlbumsTable tr.odd td.sorting_2,
-    #myDownloadAlbumsTable tr.odd td.sorting_1 {
-        background-color: var(--bg4) !important;
+    #myDownloadAlbumsTable tr.odd td.sorting_1
+    #myDownloadAlbumsTable tr:nth-of-type(odd) td {
+        background-color: var(--bg-tableodd) !important;
         color: var(--fg2) !important;
+    }
+    #myDownloadAlbumsTable tr:hover,
+    #myDownloadAlbumsTable tr:nth-of-type(odd) td:hover,
+    #myDownloadAlbumsTable tr:nth-of-type(even) td:hover {
+        background-color: var(--bg-highlight) !important;
     }
     td.articlegroup {
         background-color: var(--bg4);
@@ -230,5 +237,9 @@
     }
     .ui-widget-content a {
         color: var(--fg1);
+    }
+    p.info {
+        background-color: var(--bg3);
+        color: var(--fg2);
     }
 }
