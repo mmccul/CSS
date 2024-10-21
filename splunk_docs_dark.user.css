@@ -1,9 +1,9 @@
 /* ==UserStyle==
-@name Splunk Docs Dark
-@namespace splunk_docs_dark
-@version        1.4.8
-@description Dark mode for Splunk docs
-@author         The_Hat
+@name           Hubitat Dark
+@namespace      github.com/openstyles/stylus
+@version        20241021
+@description    Dark mode for Hubitat web
+@author         TheHat
 @preprocessor   stylus
 @license    CC-BY-2.5
 @var    color   bg1   "Background" "#373737"
@@ -18,8 +18,12 @@
 @var    text    fontsize    "Font Size" 12pt
 @var    color   darktext    "Dark text Color"   "#222222"
 @var    color   lightbg     "Light background for transparent pngs" "#c8c8c8"
+@var    select  fontfamily  "Font Family" {
+    "Serif": "serif",
+    "Sans-serif": "sans-serif"
+}
 ==/UserStyle== */
-@-moz-document domain("docs.splunk.com") {
+@-moz-document domain("192.0.2.1"), domain("hubitat.local") {
     if fg1 {
         :root {
             /* To change the variable choices now, you edit the userstyles variable definitions at the top */
@@ -40,8 +44,15 @@
             --fontsz-text: var(--fontsize, 12pt);
             /* --textdark: var(--textdark, #222222); */
             --light-bg: var(--lightbg, #c8c8c8);
+            --font-family: fontfamily;
+            /* A few custom variables specific to this stylesheet */
+            --surface-ground: var(--bg2);
+            --surface-700: var(--fg2);
+            --surface-600: var(--fg2);
+            --tw-text-opacity: var(--fg2);
         }
-    } else {
+    }
+    else {
         /* If you are not using Stylus, remove the conditional if block above, remove the else directive and the matching close
            bracket then leave the below :root stanza.  Conditionals are a Stylus unique extension */
         :root {
@@ -57,332 +68,171 @@
             --fontsize-pre: 12pt;
             --fontsize-text: 12pt;
             --light-bg: #c8c8c8;
+            --font-family: "Serif";
         }
     }
     body,
-    .subnav-fixed {
-        background-color: var(--bg2);
+    html {
+        font-family: var(--font-family);
+        font-size: var(--fontsize);
         color: var(--fg1);
-        font-size: var(--fontsz-text);
-    }
-    #hero,
-    #hero .super-title {
-        background-color: var(--bg2);
-        color: var(--fg1);
-    }
-    #body-details p,
-    #body-details #main-body ul li {
-        color: var(--fg1);
-    }
-    [class*='panel-body'] {
-        background-color: var(--bg1);
-        color: var(--fg1);
-    }
-    .panel {
-        background-color: var(--bg1);
-        color: var(--fg1);
-    }
-    a,
-    a:visited,
-    #body-details .paging td a {
-        color: var(--fg-link);
-    }
-    h1 .mw-headline,
-    h2 .mw-headline,
-    h1,
-    h2,
-    h3 {
-        color: var(--fg1) !important;
-    }
-    #main-body table p {
-        color: var(--fg1);
-    }
-    #body-details .well.caution,
-    #body-details .well {
-        background-color: var(--bg1);
-        color: var(--fg2);
-    }
-    pre {
-        background-color: var(--bg2);
-        color: var(--fg2);
-        font-size: var(--fontsz-pre);
-    }
-    #body-details #accordionSections h3,
-    #body-details #main-body h3 {
-        color: var(--fg1);
-    }
-    #detail-page #accordion .panel-body ul li a,
-    #detail-page #accordionDesktop .panel-body ul li a {
-        color: var(--fg1);
-    }
-    .panel-heading a:hover {
-        color: var(--fg2);
-    }
-    #detail-page #accordion .panel-body ul li.selected a,
-    #detail-page #accordionDesktop .panel-body ul li.selected a,
-    #right-nav > ul > li.active a {
-        color: var(--fg-link);
-    }
-    #detail-page #accordion .panel-heading,
-    #detail-page #accordionDesktop .panel-heading {
-        background-color: var(--bg3);
-        color: var(--fg2);
-    }
-    #detail-page #accordionDesktop .panel-heading a {
-        color: var(--fg2);
-    }
-    #related,
-    #related h3 {
-        background-color: var(--bg1);
-        color: var(--fg2);
-    }
-    #related ul li:before {
-        color: var(--fg-link);
-    }
-    #body-details a {
-        color: var(--fg-link);
-    }
-    #main-body table > tbody > tr:nth-of-type(odd) {
-        background-color: var(--bg-tableodd);
-        color: var(--fg1);
-    }
-    #main-body table > tbody > tr:nth-of-type(even) {
-        background-color: var(--bg-tableeven);
-        color: var(--fg1);
-    }
-    #body-details #main-body ul li div.li_content {
-        color: var(--fg1);
-    }
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-        background-color: var(--bg2);
-        color: var(--fg2);
-    }
-    .search-section {
-        background-color: var(--bg1);
-        color: var(--fg1);
-    }
-    #body-details #main-body ol li div.li_content {
-        color: var(--fg2);
-    }
-    #body-details #accordionSections .panel-body p,
-    .mw-content-ltr p {
-        font-size: var(--fontsz-text);
-    }
-    [class*='panel-body'] {
-        background-color: var(--bg1);
-        color: var(--fg1);
-    }
-    .panel {
-        background-color: var(--bg1);
-        color: var(--fg1);
-    }
-    #docs-tabs {
-        background-color: var(--bg2);
-        color: var(--fg1);
-    }
-    .docs-tabs-bodies {
-        background-color: var(--bg1);
-        color: var(--fg1);
-    }
-    p {
-        color: var(--fg1);
-    }
-    .docs-tabs-bodies .overview-body-colum p,
-    #overview-body p {
-        color: var(--fg2);
-    }
-    .samplecode p {
-        color: var(--textdark) !important;
-    }
-    .toccolours {
-        background-color: var(--bg2);
-    }
-    div.body h1,
-    div.body h2,
-    div.body h3,
-    div.body h4,
-    div.body h5,
-    div.body h6 {
-        background-color: var(--bg2);
-    }
-    div.body {
-        background-color: var(--bg1);
-        color: var(--fg1);
-    }
-    th.field-name {
-        background-color: var(--bg2);
-    }
-    code.docutils {
-        background-color: var(--bg2);
-    }
-    dl.attribute dt:target {
-        background-color: var(--bg-highlight);
-    }
-    .sui-title__inner .sui-title__text,
-    .sui-title__inner .sui-title__subtitle {
-        color: var(--fg1);
-    }
-    .sui-title__inner .sui-title__subtitle-term,
-    .sui-result .sui-result__value-category,
-    .sui-result .sui-result__value-last-modify {
-        color: var(--fg2);
-    }
-    .sui-app .sui-app-layout-container {
-        background-color: var(--bg1);
-    }
-    .sui-side-content__title-container .sui-side-content__title-label {
-        color: var(--fg1);
-    }
-
-    .sui-sidebar,
-    .sui-side-content__container {
-        background-color: var(--bg3) !important;
-    }
-    .MuiPaper-root {
-        background-color: var(--bg3);
-        color: var(--fg1);
-    }
-    .sui-accordion__label,
-    .sui-checkbox-facet__label {
-        color: var(--fg1) !important;
-    }
-    .sui-result__title-link,
-    .sui-result em {
-        color: var(--fg-link) !important;
-    }
-
-    #sui-search-box__input-wrapper > input,
-    #sui-search-box__input-wrapper.sui-search-box__wrapper .sui-search-box__text-input:focus,
-    #sui-search-box__input-wrapper.sui-search-box__wrapper .sui-search-box__text-input {
-        color: var(--fg1);
-    }
-    .sui-facet-search svg {
-        fill: var(--fg2) !important;
-    }
-    .sui-results-per-page,
-    .sui-paging-info {
-        color: var(--fg2) !important;
-    }
-    input.date-datepicker_end,
-    .date-datepicker_start input,
-    .date-datepicker_end,
-    .date-datepicker_start,
-    .react-datepicker__input-container,
-    .sui-select__control {
-        color: var(--bg2) !important;
-    }
-    .sui-checkbox-facet__checkbox svg path {
-        fill: var(--fg1) !important;
-    }
-    .sui-side-content__title-clear-filters {
-        color: var(--fg2) !important;
-    }
-    img {
-        /* background-color: var(--light-bg); */
-        filter: hue-rotate(180deg) invert();
-    }
-    .navbar-header img,
-    .logo-wrapper img.splunk-logo.logo-image {
-        filter: none !important;
-    }
-    #detail-page #accordion .panel-body ul li.selected, #detail-page #accordionDesktop .panel-body ul li.selected {
-        background-color: var(--bg1);
-    }
-    #detail-page #accordion .panel-body ul li, #detail-page #accordionDesktop .panel-body ul li {
-        background-color: var(--bg2);
-    }
-    #detail-page #accordion .panel-heading.selected, #detail-page #accordionDesktop .panel-heading.selected {
-        background-color: var(--bg3);
-        color: var(--fg1);
-    }
-    #detail-page #accordion .panel-heading.selected a, #detail-page #accordionDesktop .panel-heading.selected a {
-        color: var(--fg2);
-    }
-    #detail-page .navbar-header {
-        background-color: var(--bg3) !important;
-    }
-    #detail-page #desktop-menu-header .navbar-header a {
-        color: var(--fg2);
-    }
-    #detail-page .icon-bar {
-        background-color: var(--light-bg);
-    }
-    #right-nav > ul > li a, #right-nav h2 a {
-        color: var(--fg2);
-    }
-    .related-container #related ul li a, #detail-page label {
-        color: var(--fg2);
-    }
-    #detail-page #accordion .panel-body ul li.selected a, #detail-page #accordionDesktop .panel-body ul li.selected a {
-        background: inherit;
-    }
-    #body-details .paging tr {
-        background-color: var(--bg1) !important;
-    }
-    .arrow-previous > a > svg > path, .arrow-next > a > svg > path {
-        fill: var(--fg2);
-    }
-    .breadcrumb > li a:visited, .breadcrumb > li a {
-        color: var(--fg2);
-    }
-    #search-page-container .sui-app {
-        background-color: inherit;
-    }
-    #homepage-body ul li a {
-        color: var(--fg2);
-    }
-    #overview-body {
-        background-color: var(--bg2);
-    }
-    #docs-tabs ul.tabs > li a {
-        color: var(--fg2);
-    }
-}
-@-moz-document url-prefix("https://docs.splunk.com/observability") {
-    body {
-        background-color: var(--bg1) !important;
-        color: var(--fg1) !important;
-        font-size: var(--fontsize) !important;
-    }
-    .newcard .strong {
-        color: var(--fg2);
-    }
-    div.sphinxsidebar p {
-        color: var(--fg2);
     }
     a {
         color: var(--fg-link) !important;
     }
-    [class^="icon-"]:before, [class*=" icon-"]:before {
+    .mdl-grid,
+    #divMainUIContent {
+        background-color: var(--bg1);
+        color: var(--fg1);
+    }
+    #divAppUIContainer {
+        background-color: var(--bg2);
+    }
+    .btn-default {
+        color: var(--fg2) !important;
+    }
+    #settings[btnMainMenu],
+    button.mdl-button,
+    .p-button {
+        background-color: var(--bg3) !important;
+        color: var(--fg1);
+    }
+    [class^="text"] {
+        color: var(--fg1);
+    }
+    .mdl-card,
+    .surface-ground {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    tr:nth-child(even),
+    .p-treetable .p-treetable-tbody > tr:nth-child(even),
+    .p-treetable .p-treetable-tbody > tr:has(td>.app-grid-child):nth-child(even),
+    .p-treetable .p-treetable-tbody > tr:has(td>.device-grid-child):nth-child(even),
+    .p-treetable .p-treetable-tbody > tr:has(td>.room-grid-child):nth-child(even) {
+        background-color: var(--bg-tableeven) !important;
+    }
+    tr:nth-child(odd),
+    .p-treetable .p-treetable-tbody > tr:nth-child(odd),
+    .p-treetable .p-treetable-tbody > tr:has(td>.app-grid-child):nth-child(odd),
+    .p-treetable .p-treetable-tbody > tr:has(td>.device-grid-child):nth-child(odd),
+    .p-treetable .p-treetable-tbody > tr:has(td>.room-grid-child):nth-child(odd) {
+        background-color: var(--bg-tableodd) !important;
+    }
+    td {
+        background-color: inherit !important;
+    }
+    .p-treetable .p-treetable-tbody>tr {
         color: var(--fg2);
     }
-    .newcard {
-        border: 1px solid var(--fg2);
+    .p-treetable .p-treetable-tfoot>tr>td, .p-treetable .p-treetable-thead>tr>th {
+        color: var(--fg1);
+        background-color: var(--bg2);
+        font-weight: bold;
     }
-    tr:nth-child(even) {
-        background-color: var(--bg-tableeven);
+    .p-datatable .p-datatable-tbody>tr {
+        color: var(--fg2);
     }
-    tr:nth-child(odd) {
-        background-color: var(--bg-tableodd);
-    }
-    ul#rightSideTOC > li[class^="toctree"] {
-        color: var(--fg1) !important;
-    }
-    .current.reference.internal {
-        color: var(--fg1) !important;
-    }
-    div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h6 {
+    ::selection {
         background: inherit;
     }
-    div.note {
-        background-color: var(--bg3) !important;
+    .p-tabview-nav-content {
+        background-color: var(--bg2);
+        color: var(--fg1);
     }
-    .signalfxmodal-content {
+    .p-tabview .p-tabview-nav {
+        background-color: var(--bg2);
+    }
+    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+        background-color: var(--bg-highlight);
+    }
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+        background-color: var(--bg2);
+    }
+    .p-tabview .p-tabview-panels {
+        background-color: var(--bg1);
+        color: var(--fg1);
+    }
+    .p-panel .p-panel-content, .p-panel .p-panel-header {
+        background-color: var(--bg2);
+        color: var(--fg2);
+    }
+    .bg-light-gray {
+        background-color: var(--bg1);
+    }
+    .bg-white {
+        background-color: var(--bg2);
+    }
+    .p-button.p-button-text {
+        color: var(--fg2);
+    }
+    .mdl-card__title {
+        color: var(--fg2);
+    }
+    .SumoSelect>.CaptionCont {
+        background-color: var(--bg2);
+    }
+    input {
+        background-color: var(--bg2);
+    }
+    .mdl-button:hover, input[type=submit] {
         background-color: var(--bg3);
+        color: var(--fg2);
     }
-
+    .selected:hover,
+    .SumoSelect>.optWrapper>.options li.opt:hover {
+        background-color: var(--bg-highlight);
+    }
+    .selected, .SumoSelect>.optWrapper>.options li.opt {
+        background-color: var(--bg2);
+    }
+    .p-dialog .p-dialog-header, .p-dialog .p-dialog-content, .p-dialog .p-dialog-footer {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    .p-inputtext {
+        color: var(--fg1);
+        background-color: var(--bg2);
+    }
+    .tileArea {
+        background-color: var(--bg1);
+    }
+    .p-picklist .p-picklist-list-wrapper {
+        background-color: var(--bg1);
+    }
+    .p-picklist .p-picklist-list .p-picklist-item {
+        color: var(--fg1);
+    }
+    .text-neutral-100 {
+        color: var(--fg1);
+    }
+    .bg-off-background {
+        background-color: var(--bg2);
+        color: var(--fg2);
+    }
+    .p-overlaypanel {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    .btn-default:hover, .btn-default.disabled, .btn-default[disabled] {
+        background-color: var(--bg-highlight);
+    }
+    .nav>li>a:hover {
+        background-color: var(--bg-highlight);
+    }
+    .settings-container table.mdl-data-table tr.settings-section-row:hover {
+        background-color: var(--bg-highlight) !important;
+    }
+    .hover\:bg-gray-300:hover {
+        background-color: var(--bg-highlight) !important;
+    }
+    .state-complete-text {
+        color: var(--fg2);
+    }
+    .mdl-data-table th, .mdl-data-table tr {
+        color: var(--fg2);
+    }
+    img.zwave-inline-image, img.matter-inline-image {
+        filter: hue-rotate(180deg) invert();
+    }
 }
