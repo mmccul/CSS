@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Hubitat Dark
 @namespace      github.com/openstyles/stylus
-@version        20240902
+@version        20241021
 @description    Dark mode for Hubitat web
 @author         TheHat
 @preprocessor   stylus
@@ -22,8 +22,9 @@
     "Serif": "serif",
     "Sans-serif": "sans-serif"
 }
+@var    color   fg-disabled "Disabled text color"   "#707090"
 ==/UserStyle== */
-@-moz-document domain("192.0.2.1"), domain("hubitat.local") {
+@-moz-document domain("192.168.1.1"), domain("heim.local") {
     if fg1 {
         :root {
             /* To change the variable choices now, you edit the userstyles variable definitions at the top */
@@ -45,10 +46,13 @@
             /* --textdark: var(--textdark, #222222); */
             --light-bg: var(--lightbg, #c8c8c8);
             --font-family: fontfamily;
+            --fg-disabled: fg-disabled;
             /* A few custom variables specific to this stylesheet */
             --surface-ground: var(--bg2);
             --surface-700: var(--fg2);
             --tw-text-opacity: var(--fg2);
+            --surface-600: var(--bg-highlight);
+            --surface-900: var(--fg2);
         }
     }
     else {
@@ -60,6 +64,8 @@
             --bg3: #222240;
             --fg1: #dadada;
             --fg2: #b0b0b0;
+            --fg3: var(--fg-disabled);
+            --fg-disabled: #707090;
             --bg-highlight: #37378a;
             --fg-link: #a0a0ff;
             --bg-tableeven: #373737;
@@ -68,6 +74,12 @@
             --fontsize-text: 12pt;
             --light-bg: #c8c8c8;
             --font-family: "Serif";
+            /* A few custom variables specific to this stylesheet */
+            --surface-ground: var(--bg2);
+            --surface-700: var(--fg2);
+            --tw-text-opacity: var(--fg2);
+            --surface-600: var(--bg-highlight);
+            --surface-900: var(--fg2);
         }
     }
     body,
@@ -225,5 +237,38 @@
     .hover\:bg-gray-300:hover {
         background-color: var(--bg-highlight) !important;
     }
-
+    .state-complete-text {
+        color: var(--fg2);
+    }
+    .mdl-data-table th, .mdl-data-table tr {
+        color: var(--fg2);
+    }
+    img.zwave-inline-image, img.matter-inline-image {
+        filter: hue-rotate(180deg) invert();
+    }
+    .p-button:disabled {
+        color: var(--fg2) !important;
+    }
+    g[data-type*='TextBlock'] {
+        background-color: var(--bg3);
+    }
+    foreignObject[joint-selector='foreignObject'] {
+        background-color: inherit;
+    }
+    .p-multiselect-label {
+        background-color: var(--bg2);
+    }
+    .p-treetable .p-treetable-tbody>tr>td .p-treetable-toggler,
+    .p-treetable .p-sortable-column .p-sortable-column-icon {
+        color: var(--fg2);
+    }
+    input.p-inputtext {
+        border-color: var(--fg1);
+    }
+    ::placeholder {
+        color: var(--fg-disabled);
+    }
+    .main-menu-li>a:hover {
+        background-color: var(--bg3);
+    }
 }
