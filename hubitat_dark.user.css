@@ -24,7 +24,7 @@
 }
 @var    color   fg-disabled "Disabled text color"   "#707090"
 ==/UserStyle== */
-@-moz-document domain("192.168.1.1"), domain("heim.local") {
+@-moz-document domain("192.0.2.1"), domain("hubitat.local") {
     if fg1 {
         :root {
             /* To change the variable choices now, you edit the userstyles variable definitions at the top */
