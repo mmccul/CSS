@@ -271,4 +271,7 @@
     .main-menu-li>a:hover {
         background-color: var(--bg3);
     }
+    .w-full .text-600 {
+        color: var(--fg2) !important;
+    }    
 }
