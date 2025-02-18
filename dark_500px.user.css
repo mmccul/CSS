@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darker 500px
 @namespace      500px_dark
-@version        1.0.6
+@version        1.0.7
 @description    Darken 500px
 @author         The_Hat
 @var    color   bg1   "Background" "#373737"
@@ -90,7 +90,8 @@
         color: var(--fg1);
     }
 
-    [class*='StyledLayout__Container'],
+    /*[class*='StyledLayout__Container'], */
+    [class^='Elements__StyledSearch'] [class^='StyledLayout__Container'],
     [class^='Elements__ItemCardWrapper'] {
         background-color: var(--bg2);
     }
