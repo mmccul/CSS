@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Confluence
 @namespace      confluence_dark
-@version        20240814
+@version        20250218
 @description    Darken Confluence, smoother than most efforts I've seen.
 @author         The_Hat
 @preprocessor   stylus
@@ -584,5 +584,29 @@ For this page to work, you MUST edit the below domain entry to that for your con
     }
     body.mceContentBody {
         background-color: var(--bg2);
+    }
+    form.aui:not(.aui-legacy-forms) .checkbox input[type=checkbox], form.aui:not(.aui-legacy-forms) .radio input[type=radio] {
+        color: var(--fg);
+    }
+    [class^='RecentContentItem_result-item-title__'], [class^='RecentSpaceItem_recent-space-title__'] {
+        color: var(--fg1);
+    }
+    [class^='RecentContentItem_result-item-metadata__'] {
+        color: var(--fg2);
+    }
+    .aui-dialog .dialog-button-panel a.button-panel-link {
+        color: var(--fg-link);
+    }
+    .page-metadata-item a span {
+        color: var(--fg2);
+    }
+    img.page-banner-item-icon, #system-content-items .aui-icon:before {
+        filter: hue-rotate(180deg) invert();
+    }
+    [class^='SearchContentItem_search-content-item-component']:hover, 
+    [class^='SearchContentItem_search-content-item-component']:focus,
+    .SearchContentItem_search-content-item-component__1k0hr:hover, 
+    .SearchContentItem_search-content-item-component__1k0hr:focus {
+        background-color: var(--bg-highlight);
     }
 }
