@@ -3,7 +3,7 @@
 @namespace    USO Archive
 @author       The_Hat
 @description  Make eclassical.com less glaring white
-@version      20241006
+@version      20250302
 @license      CC-BY-4.0
 @preprocessor stylus
 @var    color   bg1   "Background" "#373737"
@@ -241,5 +241,15 @@
     p.info {
         background-color: var(--bg3);
         color: var(--fg2);
+    }
+    a.gridArticleName:active, a.gridArticleName:link, a.gridArticleName:visited, a.gridArticlegroupName:active, a.gridArticlegroupName:link, a.gridArticlegroupName:visited {
+        color: var(--fg2);
+        font-size: var(--fontsize);
+        font-family: var(--fontfamily);
+    }
+    table.letterlimit td a {
+        color: var(--fg2);
+        font-size: var(--fontsize);
+        font-family: var(--fontfamily);
     }
 }
