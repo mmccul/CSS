@@ -19,7 +19,8 @@
 @var    color   darktext    "Dark text Color"   "#222222"
 @var    color   lightbg     "Light background for transparent pngs" "#c8c8c8"
 ==/UserStyle== */
-@-moz-document domain("docs.splunk.com") {
+@-moz-document domain("docs.splunk.com"),
+domain("help.splunk.com") {
     if fg1 {
         :root {
             /* To change the variable choices now, you edit the userstyles variable definitions at the top */
@@ -38,10 +39,13 @@
 
             --fontsz-pre: var(--fontsize, 12pt);
             --fontsz-text: var(--fontsize, 12pt);
-            /* --textdark: var(--textdark, #222222); */
             --light-bg: var(--lightbg, #c8c8c8);
+            --primary-font-family: serif !important;
+            --hljs-ln-numbers-odd-color: var(--fg2);
+            --printContentButtonColor: var(--fg2);
         }
-    } else {
+    }
+    else {
         /* If you are not using Stylus, remove the conditional if block above, remove the else directive and the matching close
            bracket then leave the below :root stanza.  Conditionals are a Stylus unique extension */
         :root {
@@ -57,8 +61,50 @@
             --fontsize-pre: 12pt;
             --fontsize-text: 12pt;
             --light-bg: #c8c8c8;
+            --primary-font-family: serif !important;
         }
     }
+    p { 
+    color: var(--fg1);
+    font-family: serif !important;
+    
+    }
+    .codeblock, .hljs {
+        color: var(--fg2) !important;
+    }
+    .ezd-portal_content-page_main-wrapper render-html a.j-external-link {
+        color: var(--fg-link);
+    }
+    .mui-paper_root {
+        color: var(--fg2);
+    }
+    code {
+        color: var(--textdark);
+    }
+    .ezd-portal_nav-tree_item-selected, .ezd-portal_nav-tree_item-selected * {
+        color: var(--textdark);
+    }
+    .mui-icon-button_root {
+        color: var(--fg2);
+    }
+    pre {
+        color: var(--fg2);
+    }
+    .mui-paper_root {
+        background-color: inherit;
+        color: var(--fg1);
+    }
+    .ezd-portal_simple-tree_item p {
+        color: var(--fg1);
+    }
+    .ezd-portal_content-page_chunked-sections-title {
+        color: var(--fg1);
+    }
+    .ezd-portal_portal-breadcrumb_href {
+        color: var(--fg2);
+    }
+}
+@-moz-document domain("docs.splunk.com") {
     body,
     .subnav-fixed {
         background-color: var(--bg2);
@@ -289,17 +335,21 @@
     .logo-wrapper img.splunk-logo.logo-image {
         filter: none !important;
     }
-    #detail-page #accordion .panel-body ul li.selected, #detail-page #accordionDesktop .panel-body ul li.selected {
+    #detail-page #accordion .panel-body ul li.selected,
+    #detail-page #accordionDesktop .panel-body ul li.selected {
         background-color: var(--bg1);
     }
-    #detail-page #accordion .panel-body ul li, #detail-page #accordionDesktop .panel-body ul li {
+    #detail-page #accordion .panel-body ul li,
+    #detail-page #accordionDesktop .panel-body ul li {
         background-color: var(--bg2);
     }
-    #detail-page #accordion .panel-heading.selected, #detail-page #accordionDesktop .panel-heading.selected {
+    #detail-page #accordion .panel-heading.selected,
+    #detail-page #accordionDesktop .panel-heading.selected {
         background-color: var(--bg3);
         color: var(--fg1);
     }
-    #detail-page #accordion .panel-heading.selected a, #detail-page #accordionDesktop .panel-heading.selected a {
+    #detail-page #accordion .panel-heading.selected a,
+    #detail-page #accordionDesktop .panel-heading.selected a {
         color: var(--fg2);
     }
     #detail-page .navbar-header {
@@ -311,22 +361,27 @@
     #detail-page .icon-bar {
         background-color: var(--light-bg);
     }
-    #right-nav > ul > li a, #right-nav h2 a {
+    #right-nav > ul > li a,
+    #right-nav h2 a {
         color: var(--fg2);
     }
-    .related-container #related ul li a, #detail-page label {
+    .related-container #related ul li a,
+    #detail-page label {
         color: var(--fg2);
     }
-    #detail-page #accordion .panel-body ul li.selected a, #detail-page #accordionDesktop .panel-body ul li.selected a {
+    #detail-page #accordion .panel-body ul li.selected a,
+    #detail-page #accordionDesktop .panel-body ul li.selected a {
         background: inherit;
     }
     #body-details .paging tr {
         background-color: var(--bg1) !important;
     }
-    .arrow-previous > a > svg > path, .arrow-next > a > svg > path {
+    .arrow-previous > a > svg > path,
+    .arrow-next > a > svg > path {
         fill: var(--fg2);
     }
-    .breadcrumb > li a:visited, .breadcrumb > li a {
+    .breadcrumb > li a:visited,
+    .breadcrumb > li a {
         color: var(--fg2);
     }
     #search-page-container .sui-app {
@@ -357,7 +412,8 @@
     a {
         color: var(--fg-link) !important;
     }
-    [class^="icon-"]:before, [class*=" icon-"]:before {
+    [class^="icon-"]:before,
+    [class*=" icon-"]:before {
         color: var(--fg2);
     }
     .newcard {
@@ -375,7 +431,12 @@
     .current.reference.internal {
         color: var(--fg1) !important;
     }
-    div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h6 {
+    div.body h1,
+    div.body h2,
+    div.body h3,
+    div.body h4,
+    div.body h5,
+    div.body h6 {
         background: inherit;
     }
     div.note {
@@ -384,5 +445,46 @@
     .signalfxmodal-content {
         background-color: var(--bg3);
     }
-
+}
+@-moz-document domain("help.splunk.com") {
+    :root {
+        --hljs-background: var(--bg2);
+        --primary-font-family: sans-serif;
+        --secondary-font-family: sans-serif;
+        --code-font-family: monospace;
+        --primary-color: var(--fg1);
+        --background-color-one: var(--bg1);
+        --background-color-two: var(--bg2);
+        --background-light-gray: var(--bg3);
+        --accent-color-one: var(--highlight);
+        --accent-color-two: var(--highlight);
+        --splunk-lipstick: ;
+        --splunk-mineshaft: var(--fg2);
+        --splunk-firefly: var(--fg1);
+        --splunk-neonpink: var(--bg-highlight);
+        --splunk-darkgray: var(--fg1);
+        --splunk-lightgray: var(--fg2);
+        --splunk-neutral-black: var(--fg1);
+    }
+    html,
+    body {
+        background-color: var(--bg1);
+        color: var(--fg1);
+    }
+    .pre,
+    .codeblock,
+    .language-sh,
+    .language-bash,
+    code-format.pre.codeblock {
+        background-color: var(--bg2);
+    }
+    .code-scroll.hljs,
+    .hljs,
+    .code-scroll {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    .hljs-comment {
+        color: var(--fg2);
+    }
 }
