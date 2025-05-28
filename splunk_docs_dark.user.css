@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name Splunk Docs Dark
 @namespace splunk_docs_dark
-@version        1.4.8
+@version        1.5.0
 @description Dark mode for Splunk docs
 @author         The_Hat
 @preprocessor   stylus
@@ -101,6 +101,25 @@ domain("help.splunk.com") {
         color: var(--fg1);
     }
     .ezd-portal_portal-breadcrumb_href {
+        color: var(--fg2);
+    }
+    .ezd-portal_content-page_chunked-sections-wrapper {
+        max-height: max-content;
+        position: sticky;
+        top: 0px;
+    }
+    table > tbody > tr:nth-of-type(odd) {
+        background-color: var(--bg-tableodd);
+        color: var(--fg1);
+    }
+    table > tbody > tr:nth-of-type(even), .table tbody:has(> tr:nth-child(3)) tr:nth-child(even) {
+        background-color: var(--bg-tableeven);
+        color: var(--fg1);
+    }
+    .hljs {
+        color: var(--fg2) !important;
+    }
+    .ezd-portal_step-links_step-link-icon {
         color: var(--fg2);
     }
 }
