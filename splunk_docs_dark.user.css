@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name Splunk Docs Dark
 @namespace splunk_docs_dark
-@version        1.5.0
+@version        1.5.2
 @description Dark mode for Splunk docs
 @author         The_Hat
 @preprocessor   stylus
@@ -18,6 +18,10 @@
 @var    text    fontsize    "Font Size" 12pt
 @var    color   darktext    "Dark text Color"   "#222222"
 @var    color   lightbg     "Light background for transparent pngs" "#c8c8c8"
+@var    select  fontfamily  "Font Family" {
+    "Serif": "serif",
+    "Sans-serif": "sans-serif"
+}
 ==/UserStyle== */
 @-moz-document domain("docs.splunk.com"),
 domain("help.splunk.com") {
@@ -36,11 +40,11 @@ domain("help.splunk.com") {
             --fontsize: fontsize;
             --textdark: darktext;
             --lightbg: lightbg;
-
+            --fontfamily: fontfamily;
             --fontsz-pre: var(--fontsize, 12pt);
             --fontsz-text: var(--fontsize, 12pt);
             --light-bg: var(--lightbg, #c8c8c8);
-            --primary-font-family: serif !important;
+            --primary-font-family: fontfamily !important;
             --hljs-ln-numbers-odd-color: var(--fg2);
             --printContentButtonColor: var(--fg2);
         }
@@ -59,14 +63,20 @@ domain("help.splunk.com") {
             --bg-tableeven: #373737;
             --bg-tableodd: #303030;
             --fontsize-pre: 12pt;
+            --fontsize: 16px;
             --fontsize-text: 12pt;
+            --fontfamily: serif;
+            --textdark: #222222;
+            --lightbg: #c8c8c8;
             --light-bg: #c8c8c8;
             --primary-font-family: serif !important;
+            --hljs-ln-numbers-odd-color: var(--fg2);
+            --printContentButtonColor: var(--fg2);
         }
     }
     p { 
     color: var(--fg1);
-    font-family: serif !important;
+    font-family: var(--fontfamily) !important;
     
     }
     .codeblock, .hljs {
@@ -121,6 +131,16 @@ domain("help.splunk.com") {
     }
     .ezd-portal_step-links_step-link-icon {
         color: var(--fg2);
+    }
+    a:focus, a:hover {
+        color: var(--fg-link);
+    }
+    .ezd-portal_content-page_main-wrapper render-html a {
+        color: var(--fg-link);
+    }
+    .ezd-portal_nav-tree_item-hover, .ezd-portal_nav-tree_item-hover * {
+        background-color: var(--bg-highlight) !important;
+        color:  var(--fg1) !important;
     }
 }
 @-moz-document domain("docs.splunk.com") {
