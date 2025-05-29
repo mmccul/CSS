@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name Splunk Docs Dark
 @namespace splunk_docs_dark
-@version        1.5.2
+@version        1.5.4
 @description Dark mode for Splunk docs
 @author         The_Hat
 @preprocessor   stylus
@@ -19,8 +19,8 @@
 @var    color   darktext    "Dark text Color"   "#222222"
 @var    color   lightbg     "Light background for transparent pngs" "#c8c8c8"
 @var    select  fontfamily  "Font Family" {
-    "Serif": "serif",
-    "Sans-serif": "sans-serif"
+    "Sans-serif": "sans-serif",
+    "Serif": "serif"
 }
 ==/UserStyle== */
 @-moz-document domain("docs.splunk.com"),
@@ -47,6 +47,8 @@ domain("help.splunk.com") {
             --primary-font-family: fontfamily !important;
             --hljs-ln-numbers-odd-color: var(--fg2);
             --printContentButtonColor: var(--fg2);
+            --splunk-mineshaft: var(--fg2);
+            --splunk-firefly: var(--textdark);
         }
     }
     else {
@@ -72,14 +74,54 @@ domain("help.splunk.com") {
             --primary-font-family: serif !important;
             --hljs-ln-numbers-odd-color: var(--fg2);
             --printContentButtonColor: var(--fg2);
+            --splunk-mineshaft: var(--fg2);
+            --splunk-firefly: var(--textdark);
         }
     }
-    p { 
-    color: var(--fg1);
-    font-family: var(--fontfamily) !important;
-    
+    :root {
+        --hljs-background: var(--bg2);
+        --code-font-family: monospace;
+        --primary-color: var(--fg1);
+        --background-color-one: var(--bg1);
+        --background-color-two: var(--bg2);
+        --background-light-gray: var(--bg3);
+        --accent-color-one: var(--highlight);
+        --accent-color-two: var(--highlight);
+        --splunk-lipstick: ;
+        --splunk-mineshaft: var(--fg2);
+        --splunk-neonpink: var(--bg-highlight);
+        --splunk-darkgray: var(--fg1);
+        --splunk-lightgray: var(--fg2);
+        --splunk-neutral-black: var(--fg1);
+        --splunk-pink: #CE0070;
     }
-    .codeblock, .hljs {
+    html,
+    body {
+        background-color: var(--bg1);
+        color: var(--fg1);
+    }
+    .pre,
+    .codeblock,
+    .language-sh,
+    .language-bash,
+    code-format.pre.codeblock {
+        background-color: var(--bg2);
+    }
+    .code-scroll.hljs,
+    .hljs,
+    .code-scroll {
+        background-color: var(--bg2);
+        color: var(--fg1);
+    }
+    .hljs-comment {
+        color: var(--fg2);
+    }
+    p {
+        color: var(--fg1);
+        font-family: var(--fontfamily) !important;
+    }
+    .codeblock,
+    .hljs {
         color: var(--fg2) !important;
     }
     .ezd-portal_content-page_main-wrapper render-html a.j-external-link {
@@ -91,7 +133,8 @@ domain("help.splunk.com") {
     code {
         color: var(--textdark);
     }
-    .ezd-portal_nav-tree_item-selected, .ezd-portal_nav-tree_item-selected * {
+    .ezd-portal_nav-tree_item-selected,
+    .ezd-portal_nav-tree_item-selected * {
         color: var(--textdark);
     }
     .mui-icon-button_root {
@@ -122,7 +165,8 @@ domain("help.splunk.com") {
         background-color: var(--bg-tableodd);
         color: var(--fg1);
     }
-    table > tbody > tr:nth-of-type(even), .table tbody:has(> tr:nth-child(3)) tr:nth-child(even) {
+    table > tbody > tr:nth-of-type(even),
+    .table tbody:has(> tr:nth-child(3)) tr:nth-child(even) {
         background-color: var(--bg-tableeven);
         color: var(--fg1);
     }
@@ -132,15 +176,43 @@ domain("help.splunk.com") {
     .ezd-portal_step-links_step-link-icon {
         color: var(--fg2);
     }
-    a:focus, a:hover {
+    a:focus,
+    a:hover, .css-6cpkhk .sui-disclaimer__message a {
         color: var(--fg-link);
     }
     .ezd-portal_content-page_main-wrapper render-html a {
         color: var(--fg-link);
     }
-    .ezd-portal_nav-tree_item-hover, .ezd-portal_nav-tree_item-hover * {
+    .ezd-portal_nav-tree_item-hover,
+    .ezd-portal_nav-tree_item-hover * {
         background-color: var(--bg-highlight) !important;
-        color:  var(--fg1) !important;
+        color: var(--fg1) !important;
+    }
+    a.link-level-3,
+    h2.tile-category-header {
+        color: var(--fg1);
+    }
+    .css-6cpkhk .sui-initial-container {
+        background-color: var(--bg1);
+    }
+    .css-6cpkhk .sui-search-box__submit--disabled {
+        background-color: var(--splunk-pink);
+    }
+    .css-6cpkhk .sui-app {
+        background-color: var(--bg1);
+        color: var(--fg1);
+    }
+    .css-6cpkhk .sui-disclaimer__message {
+        color: var(--fg2);
+    }
+    .sui-title__subtitle, .css-6cpkhk .sui-title__subtitle, .css-6cpkhk .sui-title__text {
+        color: var(--fg2);
+    }
+    .css-6cpkhk .sui-title__subtitle-term {
+        color: var(--fg1);
+    }
+    .css-6cpkhk .sui-side-content__title-label {
+        color: var(--fg2);
     }
 }
 @-moz-document domain("docs.splunk.com") {
@@ -483,47 +555,5 @@ domain("help.splunk.com") {
     }
     .signalfxmodal-content {
         background-color: var(--bg3);
-    }
-}
-@-moz-document domain("help.splunk.com") {
-    :root {
-        --hljs-background: var(--bg2);
-        --primary-font-family: sans-serif;
-        --secondary-font-family: sans-serif;
-        --code-font-family: monospace;
-        --primary-color: var(--fg1);
-        --background-color-one: var(--bg1);
-        --background-color-two: var(--bg2);
-        --background-light-gray: var(--bg3);
-        --accent-color-one: var(--highlight);
-        --accent-color-two: var(--highlight);
-        --splunk-lipstick: ;
-        --splunk-mineshaft: var(--fg2);
-        --splunk-firefly: var(--fg1);
-        --splunk-neonpink: var(--bg-highlight);
-        --splunk-darkgray: var(--fg1);
-        --splunk-lightgray: var(--fg2);
-        --splunk-neutral-black: var(--fg1);
-    }
-    html,
-    body {
-        background-color: var(--bg1);
-        color: var(--fg1);
-    }
-    .pre,
-    .codeblock,
-    .language-sh,
-    .language-bash,
-    code-format.pre.codeblock {
-        background-color: var(--bg2);
-    }
-    .code-scroll.hljs,
-    .hljs,
-    .code-scroll {
-        background-color: var(--bg2);
-        color: var(--fg1);
-    }
-    .hljs-comment {
-        color: var(--fg2);
     }
 }
