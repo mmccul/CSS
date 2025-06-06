@@ -156,11 +156,6 @@ domain("help.splunk.com") {
     .ezd-portal_portal-breadcrumb_href {
         color: var(--fg2);
     }
-    .ezd-portal_content-page_chunked-sections-wrapper {
-        max-height: max-content;
-        position: sticky;
-        top: 0px;
-    }
     table > tbody > tr:nth-of-type(odd) {
         background-color: var(--bg-tableodd);
         color: var(--fg1);
