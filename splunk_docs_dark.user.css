@@ -94,6 +94,12 @@ domain("help.splunk.com") {
         --splunk-lightgray: var(--fg2);
         --splunk-neutral-black: var(--fg1);
         --splunk-pink: #CE0070;
+        --bg-panel: var(--bg2);
+        --pico-color: var(--fg2) !important;
+        --splunk-darkgrey: var(--fg2);
+        --comment-text: #6065c0;
+        --code-attr: #9776f0;
+        --pico-primary-hover-underline: var(--fg-link);
     }
     html,
     body {
@@ -171,9 +177,12 @@ domain("help.splunk.com") {
     .ezd-portal_step-links_step-link-icon {
         color: var(--fg2);
     }
-    a:focus,
+    a, a:focus,
     a:hover, .css-6cpkhk .sui-disclaimer__message a {
         color: var(--fg-link);
+    }
+    .content-body ul a {
+        color: var(--fg-link) !important;
     }
     .ezd-portal_content-page_main-wrapper render-html a {
         color: var(--fg-link);
@@ -208,6 +217,18 @@ domain("help.splunk.com") {
     }
     .css-6cpkhk .sui-side-content__title-label {
         color: var(--fg2);
+    }
+    .toc, #navi {
+        background: var(--bg2);
+    }
+    .toc h6, .right-nav h6 {
+        color: var(--fg2);
+    }
+    .hljs-meta .hljs-string, .hljs-regexp, .hljs-string {
+        color: var(--comment-text);
+    }
+    .hljs-attr, .hljs-attribute, .hljs-literal, .hljs-meta, .hljs-number, .hljs-operator, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id, .hljs-variable {
+        color: var(--code-attr);
     }
 }
 @-moz-document domain("docs.splunk.com") {
@@ -502,6 +523,7 @@ domain("help.splunk.com") {
     #docs-tabs ul.tabs > li a {
         color: var(--fg2);
     }
+
 }
 @-moz-document url-prefix("https://docs.splunk.com/observability") {
     body {
