@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name Splunk Docs Dark
 @namespace splunk_docs_dark
-@version        1.5.5
+@version        1.5.6
 @description Dark mode for Splunk docs
 @author         The_Hat
 @preprocessor   stylus
@@ -229,6 +229,12 @@ domain("help.splunk.com") {
     }
     .hljs-attr, .hljs-attribute, .hljs-literal, .hljs-meta, .hljs-number, .hljs-operator, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id, .hljs-variable {
         color: var(--code-attr);
+    }
+    .css-1swpyve .sui-app {
+        background-color: var(--bg1);
+    }
+    .css-1swpyve .sui-result__value-last-modify, .css-1swpyve .sui-result__value-category {
+        color: var(--fg2);
     }
 }
 @-moz-document domain("docs.splunk.com") {
