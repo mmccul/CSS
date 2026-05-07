@@ -38,6 +38,7 @@ domain("theregister.co.uk") {
             --darktext: darktext;
             --lightbg: lightbg;
             --real_dark: real_dark;
+            --color-red: #600;
         }
     }
     else {
@@ -58,8 +59,12 @@ domain("theregister.co.uk") {
             --fontsize: var(--fontsize);
             --light-bg: #c8c8c8;
             --mast_color: #600;
+            --color-red: #600;
             --real_dark: #000;
         }
+    }
+    :root {
+        --color-red: #600;
     }
     body {
         background-color: var(--bg1);
@@ -762,5 +767,39 @@ domain("theregister.co.uk") {
     }
     #main-col .submit_btn {
         color: var(--fg2);
+    }
+    .bg-nonary-light.op-bg_80 {
+        background: var(--real_dark);
+    }
+    .bg-nonary-light.op-bg_40, .bg-nonary-light.op-bg_60 {
+        background: var(--bg2);
+    }
+    .pageHeader .row.bottom-row, .pageHeader .row.bottom-row .section .navigation.customMenu1 .menu-list .first-list-item a {
+        background: var(--real_dark);
+        color: var(--fg2);
+    }
+    .main .row:not([class*=bg-]), section.related .row:not([class*=bg-]), main.pageWidth>article:not([class*=bg-]) {
+        background: var(--bg2);
+    }
+    .bg-tertiary {
+        background: var(--real_dark);
+    }
+    .byline .name {
+        color: var(--fg2);
+    }
+    .primary {
+        color: var(--fg1) !important;
+    }
+    [class*=intro], #reg-webcast-slot {
+        color: var(--fg1);
+    }
+    [class*=__standfirst], [class*=__short-synopsis] {
+        color: var(--fg1);
+    }
+    [class*=__date-row] {
+        color: var(--fg2);
+    }
+    .bg-senary.op-bg_80 {
+        background: var(--bg2);
     }
 }
