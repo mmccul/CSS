@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           The Reg Goes Dark
 @namespace      github.com/openstyles/stylus
-@version        20240825
+@version        20260927
 @description    The Register comes to the dark side
 @author         TheHat
 @var    color   bg1   "Background" "#373737"
@@ -101,7 +101,7 @@ domain("theregister.co.uk") {
     #masthead .center_nav,
     #masthead .right_nav {
         background: var(--mast_color);
-        box-shadow: -2000px 0px var(--mast_color), -1000px 0px var(--mast_color), 1000px 0px var(--mast_color), 2000px 0px var(--mast_color); 
+        box-shadow: -2000px 0px var(--mast_color), -1000px 0px var(--mast_color), 1000px 0px var(--mast_color), 2000px 0px var(--mast_color);
     }
     #masthead .left_nav {
         z-index: 1;
@@ -734,7 +734,8 @@ domain("theregister.co.uk") {
     #footer .right_block .newsletter_and_social {
         background: #080808;
     }
-    #page #main-col .article_wrap .centre_col a, #page #main-col .article_wrap .right_col a {
+    #page #main-col .article_wrap .centre_col a,
+    #page #main-col .article_wrap .right_col a {
         color: var(--fg-link);
     }
     #page #main-col .article_wrap .centre_col .comments a {
@@ -752,7 +753,11 @@ domain("theregister.co.uk") {
     #main-col #coloumnist_bio a {
         color: var(--fg-link);
     }
-    .rt-9as, .rt-9bs, .rt-9cs, .rt-9bs .other_stories, .rt-9cs .other_stories {
+    .rt-9as,
+    .rt-9bs,
+    .rt-9cs,
+    .rt-9bs .other_stories,
+    .rt-9cs .other_stories {
         background: inherit;
     }
     #main-col .myaccount_wrap .left_account #settings_tab_nav li.current_section {
@@ -771,14 +776,18 @@ domain("theregister.co.uk") {
     .bg-nonary-light.op-bg_80 {
         background: var(--real_dark);
     }
-    .bg-nonary-light.op-bg_40, .bg-nonary-light.op-bg_60 {
+    .bg-nonary-light.op-bg_40,
+    .bg-nonary-light.op-bg_60 {
         background: var(--bg2);
     }
-    .pageHeader .row.bottom-row, .pageHeader .row.bottom-row .section .navigation.customMenu1 .menu-list .first-list-item a {
+    .pageHeader .row.bottom-row,
+    .pageHeader .row.bottom-row .section .navigation.customMenu1 .menu-list .first-list-item a {
         background: var(--real_dark);
         color: var(--fg2);
     }
-    .main .row:not([class*=bg-]), section.related .row:not([class*=bg-]), main.pageWidth>article:not([class*=bg-]) {
+    .main .row:not([class*=bg-]),
+    section.related .row:not([class*=bg-]),
+    main.pageWidth > article:not([class*=bg-]) {
         background: var(--bg2);
     }
     .bg-tertiary {
@@ -790,10 +799,12 @@ domain("theregister.co.uk") {
     .primary {
         color: var(--fg1) !important;
     }
-    [class*=intro], #reg-webcast-slot {
+    [class*=intro],
+    #reg-webcast-slot {
         color: var(--fg1);
     }
-    [class*=__standfirst], [class*=__short-synopsis] {
+    [class*=__standfirst],
+    [class*=__short-synopsis] {
         color: var(--fg1);
     }
     [class*=__date-row] {
@@ -801,5 +812,39 @@ domain("theregister.co.uk") {
     }
     .bg-senary.op-bg_80 {
         background: var(--bg2);
+    }
+    a[itemprop=url]:visited h2[itemprop~=headline],
+    a[itemprop=url]:visited h3[itemprop~=headline],
+    a[itemprop=url]:visited h4[itemprop~=headline],
+    .articleList li a {
+        color: var(--fg-link);
+    }
+    .bodytext > p a,
+    .bodytext > ul a,
+    .bodytext > ol a,
+    .bodytext > h2 a,
+    .bodytext > h3 a,
+    .bodytext > h4 a {
+        color: var(--fg-link);
+    }
+    .bg-tertiary.op-bg_80,
+    .bg-nonary-light {
+        background: var(--bg2);
+    }
+    a[itemprop=forumCommentCount].forum, a[itemprop=forumCommentCount].forum:visited {
+        color: var(--fg2);
+    }
+    .articleList li h3 {
+        color: var(--fg2);
+    }
+    .labradorSearch article.column .content .info>* {
+        color: var(--fg2);
+    }
+    .toplist {
+        background-color: var(--bg2);
+        --background-color: var(--bg2);
+    }
+    .bg-secondary {
+        background-color: var(--bg2);
     }
 }
