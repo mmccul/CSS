@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name Splunk Docs Dark
 @namespace splunk_docs_dark
-@version        1.5.6
+@version        1.5.7
 @description Dark mode for Splunk docs
 @author         The_Hat
 @preprocessor   stylus
@@ -18,10 +18,12 @@
 @var    text    fontsize    "Font Size" 12pt
 @var    color   darktext    "Dark text Color"   "#222222"
 @var    color   lightbg     "Light background for transparent pngs" "#c8c8c8"
-@var    select  fontfamily  "Font Family" {
-    "Sans-serif": "sans-serif",
-    "Serif": "serif"
-}
+@var    select  fontfamily  "Font" {
+    "Atkinson Next": "Atkinson Hyperlegible Next",
+    "Atkinson": "Atkinson Hyperlegible",
+    "sans": "sans-serif",
+    "serif": "serif"
+        }
 ==/UserStyle== */
 @-moz-document domain("docs.splunk.com"),
 domain("help.splunk.com") {

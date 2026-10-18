@@ -16,6 +16,12 @@
 @var    text    fontsize    "Font Size" "12pt"
 @var    color   darktext    "Dark text Color"   "#222222"
 @var    color   bg-blue     "Colored Dark Background"   "#000050"
+@var    select  fontfamily  "Font" {
+    "Atkinson Next": "Atkinson Hyperlegible Next",
+    "Atkinson": "Atkinson Hyperlegible",
+    "sans": "sans-serif",
+    "serif": "serif"
+        }
 ==/UserStyle== */
 @-moz-document domain("500px.com") {
     if fg1 {
@@ -37,6 +43,8 @@
             --textdark: darktext;
             --fg: var(--fg1);
             --bg: var(--bg1);
+            --fontfamily: fontfamily;
+            font-family: var(--fontfamily);
         }
     }
     html,
